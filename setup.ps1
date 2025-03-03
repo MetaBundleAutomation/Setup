@@ -73,6 +73,31 @@ function Get-RandomSecretKey {
     return [Convert]::ToBase64String($bytes)
 }
 
+# Function to set environment variables at both process and machine level
+function Set-GlobalEnvironmentVariable {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$Name,
+        
+        [Parameter(Mandatory = $true)]
+        [string]$Value
+    )
+    
+    # Set for current process
+    [Environment]::SetEnvironmentVariable($Name, $Value, [EnvironmentVariableTarget]::Process)
+    
+    # Set for machine (requires admin privileges)
+    try {
+        [Environment]::SetEnvironmentVariable($Name, $Value, [EnvironmentVariableTarget]::Machine)
+        Write-ColorText "Set global environment variable: $Name" -ForegroundColor "Green"
+    } catch {
+        Write-ColorText "Warning: Could not set machine-level environment variable $Name. Running as administrator may be required." -ForegroundColor "Yellow"
+        # Still set it for the user level as fallback
+        [Environment]::SetEnvironmentVariable($Name, $Value, [EnvironmentVariableTarget]::User)
+        Write-ColorText "Set user-level environment variable: $Name" -ForegroundColor "Green"
+    }
+}
+
 # Clear the console and display welcome message
 Clear-Host
 Write-ColorText "===============================================" -ForegroundColor "Cyan"
@@ -118,24 +143,33 @@ Write-ColorText "Step 2: GitHub Configuration..." -ForegroundColor "Green"
 Write-ColorText "You need a GitHub Personal Access Token with 'repo' and 'read:org' permissions." -ForegroundColor "White"
 Write-ColorText "If you don't have one, create it at: https://github.com/settings/tokens" -ForegroundColor "White"
 
-$githubToken = Get-ValidatedInput -Prompt "Enter your GitHub Personal Access Token" -Validator {
+# Get GitHub token from environment variable or ask user
+$defaultGithubToken = if ($env:GITHUB_TOKEN) { $env:GITHUB_TOKEN } else { "" }
+$githubToken = Get-ValidatedInput -Prompt "Enter your GitHub Personal Access Token" -Default $defaultGithubToken -Validator {
     param($token)
-    if ($token -eq "") {
-        return $false
-    }
-    return $true
+    return $token -ne ""
 } -ErrorMessage "GitHub token cannot be empty."
 
-$githubOrg = Get-ValidatedInput -Prompt "Enter your GitHub Organization name" -Default "MetaBundleAutomation"
+# Get GitHub organization from environment variable or ask user
+$defaultGithubOrg = if ($env:GITHUB_ORG) { $env:GITHUB_ORG } else { "MetaBundleAutomation" }
+$githubOrg = Get-ValidatedInput -Prompt "Enter your GitHub organization name" -Default $defaultGithubOrg -Validator {
+    param($org)
+    return $org -ne ""
+} -ErrorMessage "GitHub organization cannot be empty."
 
-Write-ColorText "GitHub Token: [Hidden for security]" -ForegroundColor "Yellow"
+Write-ColorText "GitHub Token: $('*' * [Math]::Min($githubToken.Length, 10))..." -ForegroundColor "Yellow"
 Write-ColorText "GitHub Organization: $githubOrg" -ForegroundColor "Yellow"
 Write-ColorText ""
 
 # Step 3: Docker Configuration
 Write-ColorText "Step 3: Docker Configuration..." -ForegroundColor "Green"
 
-$repoBaseDir = Get-ValidatedInput -Prompt "Enter the base directory for repositories" -Default "C:/repos/metabundle_repos"
+# Get repository base directory from environment variable or ask user
+$defaultRepoBaseDir = if ($env:REPO_BASE_DIR) { $env:REPO_BASE_DIR } else { "C:/repos/metabundle_repos" }
+$repoBaseDir = Get-ValidatedInput -Prompt "Enter the repository base directory" -Default $defaultRepoBaseDir -Validator {
+    param($dir)
+    return $dir -ne ""
+} -ErrorMessage "Repository base directory cannot be empty."
 
 # Create the repository base directory if it doesn't exist
 Ensure-Directory -Path $repoBaseDir
@@ -146,21 +180,19 @@ Write-ColorText ""
 # Step 4: API Configuration
 Write-ColorText "Step 4: API Configuration..." -ForegroundColor "Green"
 
-$apiPort = Get-ValidatedInput -Prompt "Enter the API port" -Default "8080" -Validator {
-    param($port)
-    if ($port -match "^\d+$" -and [int]$port -gt 0 -and [int]$port -lt 65536) {
-        return $true
-    }
-    return $false
-} -ErrorMessage "Port must be a number between 1 and 65535."
+# Get API port from environment variable or ask user
+$defaultApiPort = if ($env:API_PORT) { $env:API_PORT } else { "8000" }
+$apiPort = Get-ValidatedInput -Prompt "Enter the API port" -Default $defaultApiPort -Validator {
+    param($input)
+    return $input -match "^\d+$"
+} -ErrorMessage "Please enter a valid port number."
 
-$websocketPort = Get-ValidatedInput -Prompt "Enter the WebSocket port" -Default "8081" -Validator {
-    param($port)
-    if ($port -match "^\d+$" -and [int]$port -gt 0 -and [int]$port -lt 65536) {
-        return $true
-    }
-    return $false
-} -ErrorMessage "Port must be a number between 1 and 65535."
+# Get WebSocket port from environment variable or ask user
+$defaultWebsocketPort = if ($env:WEBSOCKET_PORT) { $env:WEBSOCKET_PORT } else { "8001" }
+$websocketPort = Get-ValidatedInput -Prompt "Enter the WebSocket port" -Default $defaultWebsocketPort -Validator {
+    param($input)
+    return $input -match "^\d+$"
+} -ErrorMessage "Please enter a valid port number."
 
 Write-ColorText "API Port: $apiPort" -ForegroundColor "Yellow"
 Write-ColorText "WebSocket Port: $websocketPort" -ForegroundColor "Yellow"
@@ -169,28 +201,39 @@ Write-ColorText ""
 # Step 5: Environment Configuration
 Write-ColorText "Step 5: Environment Configuration..." -ForegroundColor "Green"
 
-$environment = Get-ValidatedInput -Prompt "Enter the environment (development, production)" -Default "development" -Validator {
+# Get environment setting from environment variable or ask user
+$defaultEnvironment = if ($env:ENVIRONMENT) { $env:ENVIRONMENT } else { "development" }
+$environment = Get-ValidatedInput -Prompt "Enter the environment (development/production)" -Default $defaultEnvironment -Validator {
     param($env)
-    if ($env -eq "development" -or $env -eq "production") {
-        return $true
-    }
-    return $false
+    return $env -eq "development" -or $env -eq "production"
 } -ErrorMessage "Environment must be either 'development' or 'production'."
 
-$testMode = Get-ValidatedInput -Prompt "Run in test mode? (true/false)" -Default "true" -Validator {
+# Get test mode setting from environment variable or ask user
+$defaultTestMode = if ($env:METABUNDLE_TEST_MODE) { $env:METABUNDLE_TEST_MODE.ToLower() } else { "false" }
+$testMode = Get-ValidatedInput -Prompt "Run in test mode? (true/false)" -Default $defaultTestMode -Validator {
     param($mode)
-    if ($mode -eq "true" -or $mode -eq "false") {
-        return $true
-    }
-    return $false
+    return $mode -eq "true" -or $mode -eq "false"
 } -ErrorMessage "Test mode must be either 'true' or 'false'."
 
 Write-ColorText "Environment: $environment" -ForegroundColor "Yellow"
 Write-ColorText "Test Mode: $testMode" -ForegroundColor "Yellow"
 Write-ColorText ""
 
-# Step 6: Dashboard Configuration
-Write-ColorText "Step 6: Dashboard Configuration..." -ForegroundColor "Green"
+# Step 6: Create Environment Files
+Write-ColorText "Step 6: Creating Environment Files..." -ForegroundColor "Green"
+
+# Set global environment variables
+Write-ColorText "Setting global environment variables..." -ForegroundColor "Green"
+Set-GlobalEnvironmentVariable -Name "GITHUB_TOKEN" -Value $githubToken
+Set-GlobalEnvironmentVariable -Name "GITHUB_ORG" -Value $githubOrg
+Set-GlobalEnvironmentVariable -Name "REPO_BASE_DIR" -Value $repoBaseDir
+Set-GlobalEnvironmentVariable -Name "API_PORT" -Value $apiPort
+Set-GlobalEnvironmentVariable -Name "WEBSOCKET_PORT" -Value $websocketPort
+Set-GlobalEnvironmentVariable -Name "ENVIRONMENT" -Value $environment
+Set-GlobalEnvironmentVariable -Name "METABUNDLE_TEST_MODE" -Value $testMode
+
+# Step 7: Dashboard Configuration
+Write-ColorText "Step 7: Dashboard Configuration..." -ForegroundColor "Green"
 
 $infrastructureApiUrl = "http://localhost:$apiPort"
 $debugMode = Get-ValidatedInput -Prompt "Run Dashboard in debug mode? (true/false)" -Default "true" -Validator {
@@ -207,8 +250,8 @@ Write-ColorText "Debug Mode: $debugMode" -ForegroundColor "Yellow"
 Write-ColorText "Secret Key: [Generated]" -ForegroundColor "Yellow"
 Write-ColorText ""
 
-# Step 7: Create .env files
-Write-ColorText "Step 7: Creating .env files..." -ForegroundColor "Green"
+# Step 8: Create .env files
+Write-ColorText "Step 8: Creating .env files..." -ForegroundColor "Green"
 
 # Create Infrastructure .env file
 $infrastructureEnvContent = @"
@@ -225,28 +268,50 @@ WEBSOCKET_PORT=$websocketPort
 
 # Environment
 ENVIRONMENT=$environment
+# Set to true to run in test mode (no Docker required)
 METABUNDLE_TEST_MODE=$testMode
+
+# Note: These values are also set as global environment variables
+# The Infrastructure service can use either the .env file or the global environment variables
 "@
+
+# Check if we're in the test environment and adjust ports to avoid conflicts
+if ($infrastructurePath -like "*MetaBundleTest*") {
+    # Use different ports for the test environment
+    $infrastructureEnvContent = $infrastructureEnvContent -replace "API_PORT=$apiPort", "API_PORT=9080"
+    $infrastructureEnvContent = $infrastructureEnvContent -replace "WEBSOCKET_PORT=$websocketPort", "WEBSOCKET_PORT=9081"
+    
+    # Also update the global environment variables for the test environment
+    Set-GlobalEnvironmentVariable -Name "API_PORT" -Value "9080"
+    Set-GlobalEnvironmentVariable -Name "WEBSOCKET_PORT" -Value "9081"
+}
 
 $infrastructureEnvPath = Join-Path -Path $infrastructurePath -ChildPath ".env"
 $infrastructureEnvContent | Out-File -FilePath $infrastructureEnvPath -Encoding utf8
 Write-ColorText "Created Infrastructure .env file at: $infrastructureEnvPath" -ForegroundColor "Yellow"
 
-# Create Dashboard .env file
+# Create .env file for Dashboard
 $dashboardEnvContent = @"
 # Dashboard Configuration
-INFRASTRUCTURE_API_URL=$infrastructureApiUrl
-DEBUG_MODE=$debugMode
+INFRASTRUCTURE_API_URL=http://localhost:$apiPort
+DEBUG_MODE=true
 SECRET_KEY=$secretKey
 "@
 
+# Check if we're in the test environment and adjust the API URL to match the test port
+if ($infrastructurePath -like "*MetaBundleTest*") {
+    $dashboardEnvContent = $dashboardEnvContent -replace "INFRASTRUCTURE_API_URL=http://localhost:$apiPort", "INFRASTRUCTURE_API_URL=http://localhost:9080"
+    # Add host binding to avoid socket permission issues
+    $dashboardEnvContent += "`nFLASK_RUN_HOST=127.0.0.1"
+}
+
 $dashboardEnvPath = Join-Path -Path $dashboardPath -ChildPath ".env"
-$dashboardEnvContent | Out-File -FilePath $dashboardEnvPath -Encoding utf8
+Set-Content -Path $dashboardEnvPath -Value $dashboardEnvContent
 Write-ColorText "Created Dashboard .env file at: $dashboardEnvPath" -ForegroundColor "Yellow"
 Write-ColorText ""
 
-# Step 8: Summary and Next Steps
-Write-ColorText "Step 8: Setup Complete!" -ForegroundColor "Green"
+# Step 9: Summary and Next Steps
+Write-ColorText "Step 9: Setup Complete!" -ForegroundColor "Green"
 Write-ColorText "Configuration files have been created successfully." -ForegroundColor "White"
 Write-ColorText ""
 Write-ColorText "Next Steps:" -ForegroundColor "Cyan"

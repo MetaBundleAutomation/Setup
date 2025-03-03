@@ -86,8 +86,10 @@ Write-ColorText ""
 Write-ColorText "Step 1: Locating Infrastructure and Dashboard directories..." -ForegroundColor "Green"
 
 # Define default paths
-$defaultInfrastructurePath = "C:\Repos\MetaBundle Server\Infrastructure"
-$defaultDashboardPath = "C:\Repos\MetaBundle Server\Dashboard"
+$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+$parentPath = Split-Path -Parent $scriptPath
+$defaultInfrastructurePath = Join-Path -Path $parentPath -ChildPath "Infrastructure"
+$defaultDashboardPath = Join-Path -Path $parentPath -ChildPath "Dashboard"
 
 # Ask for Infrastructure path
 $infrastructurePath = Get-ValidatedInput -Prompt "Enter the path to the Infrastructure directory" -Default $defaultInfrastructurePath -Validator {

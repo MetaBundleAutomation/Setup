@@ -41,8 +41,10 @@ if (Test-Path -Path ".\README.md") {
 }
 
 # Check if Infrastructure and Dashboard directories exist
-$infrastructurePath = "C:\Repos\MetaBundle Server\Infrastructure"
-$dashboardPath = "C:\Repos\MetaBundle Server\Dashboard"
+$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+$parentPath = Split-Path -Parent $scriptPath
+$infrastructurePath = Join-Path -Path $parentPath -ChildPath "Infrastructure"
+$dashboardPath = Join-Path -Path $parentPath -ChildPath "Dashboard"
 
 if (Test-Path -Path $infrastructurePath) {
     Write-Host " Infrastructure directory found at: $infrastructurePath" -ForegroundColor Green

@@ -1,0 +1,3 @@
+@echo off
+echo Running MetaBundle Setup...
+powershell -ExecutionPolicy Bypass -File "%~dp0Setup\setup.ps1"

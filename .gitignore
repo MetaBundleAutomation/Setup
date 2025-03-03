@@ -1,0 +1,39 @@
+# Ignore MetaBundle components (only track Setup files)
+/Dashboard/
+/Infrastructure/
+/Services/
+!/Setup/
+
+# Ignore Docker runtime files
+.docker/
+docker-compose.override.yml
+
+# Ignore environment files
+.env
+*.env
+!*.env.example
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+*~

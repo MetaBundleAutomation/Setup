@@ -67,4 +67,18 @@ Write-Host "To run the setup wizard, use one of the following methods:" -Foregro
 Write-Host "1. Double-click on run-setup.bat" -ForegroundColor White
 Write-Host "2. Run 'powershell -ExecutionPolicy Bypass -File setup.ps1' in a command prompt" -ForegroundColor White
 Write-Host ""
-Write-Host "Test completed successfully!" -ForegroundColor Cyan
+
+# Define the base directory
+$baseDir = "C:\Repos\MetaBundleTest"
+
+# Define a placeholder token - in real usage, use a secure environment variable
+$githubToken = "YOUR_GITHUB_TOKEN_HERE"
+
+# Run setup.ps1 directly with arguments
+Write-Host "Running setup.ps1 with command line arguments..." -ForegroundColor Yellow
+
+# Run setup.ps1 with arguments
+powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\setup.ps1" -NonInteractive -GitHubToken $githubToken -GitHubOrg "MetaBundleAutomation" -CloneRepos "yes" -Environment "development" -TestMode "false" -BaseDirectory $baseDir -ApiDomain "api.metabundle.yourdomain.com" -DashboardDomain "dashboard.metabundle.yourdomain.com"
+
+Write-Host ""
+Write-Host "Test completed!" -ForegroundColor Cyan

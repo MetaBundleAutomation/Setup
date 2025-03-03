@@ -21,7 +21,13 @@ param (
     [string]$TestMode,
     
     [Parameter(Mandatory = $false)]
-    [string]$BaseDirectory
+    [string]$BaseDirectory,
+    
+    [Parameter(Mandatory = $false)]
+    [string]$ApiDomain,
+    
+    [Parameter(Mandatory = $false)]
+    [string]$DashboardDomain
 )
 
 # Function to display colored text
@@ -426,6 +432,28 @@ $dashboardApiUrl = Get-ValidatedInput -Prompt "Enter the Dashboard API URL" -Def
     return $url -ne ""
 } -ErrorMessage "Dashboard API URL cannot be empty."
 
+# Get API domain from environment variable or ask user
+$defaultApiDomain = if ($env:API_DOMAIN) { $env:API_DOMAIN } else { "localhost" }
+if ($NonInteractive) {
+    $apiDomain = $ApiDomain
+} else {
+    $apiDomain = Get-ValidatedInput -Prompt "Enter the API domain" -Default $defaultApiDomain -Validator {
+        param($domain)
+        return $domain -ne ""
+    } -ErrorMessage "API domain cannot be empty."
+}
+
+# Get Dashboard domain from environment variable or ask user
+$defaultDashboardDomain = if ($env:DASHBOARD_DOMAIN) { $env:DASHBOARD_DOMAIN } else { "localhost" }
+if ($NonInteractive) {
+    $dashboardDomain = $DashboardDomain
+} else {
+    $dashboardDomain = Get-ValidatedInput -Prompt "Enter the Dashboard domain" -Default $defaultDashboardDomain -Validator {
+        param($domain)
+        return $domain -ne ""
+    } -ErrorMessage "Dashboard domain cannot be empty."
+}
+
 # Generate a random secret key for the Dashboard
 $secretKey = -join ((65..90) + (97..122) + (48..57) | Get-Random -Count 32 | ForEach-Object { [char]$_ })
 
@@ -433,8 +461,12 @@ $secretKey = -join ((65..90) + (97..122) + (48..57) | Get-Random -Count 32 | For
 Set-GlobalEnvironmentVariable -Name "INFRASTRUCTURE_API_URL" -Value $dashboardApiUrl
 Set-GlobalEnvironmentVariable -Name "SECRET_KEY" -Value $secretKey
 Set-GlobalEnvironmentVariable -Name "DEBUG_MODE" -Value ($environment -eq "development").ToString().ToLower()
+Set-GlobalEnvironmentVariable -Name "API_DOMAIN" -Value $apiDomain
+Set-GlobalEnvironmentVariable -Name "DASHBOARD_DOMAIN" -Value $dashboardDomain
 
 Write-ColorText "Dashboard API URL: $dashboardApiUrl" -ForegroundColor "Yellow"
+Write-ColorText "API Domain: $apiDomain" -ForegroundColor "Yellow"
+Write-ColorText "Dashboard Domain: $dashboardDomain" -ForegroundColor "Yellow"
 Write-ColorText "Secret Key: $('*' * 10)..." -ForegroundColor "Yellow"
 Write-ColorText ""
 
@@ -451,6 +483,7 @@ $infrastructureEnvVars = @{
     "WEBSOCKET_PORT" = $websocketPort
     "ENVIRONMENT" = $environment
     "METABUNDLE_TEST_MODE" = $testMode
+    "API_DOMAIN" = $apiDomain
 }
 Create-EnvFile -Path $infrastructureEnvPath -Variables $infrastructureEnvVars
 
@@ -460,6 +493,7 @@ $dashboardEnvVars = @{
     "INFRASTRUCTURE_API_URL" = $dashboardApiUrl
     "SECRET_KEY" = $secretKey
     "DEBUG_MODE" = ($environment -eq "development").ToString().ToLower()
+    "DASHBOARD_DOMAIN" = $dashboardDomain
 }
 Create-EnvFile -Path $dashboardEnvPath -Variables $dashboardEnvVars
 

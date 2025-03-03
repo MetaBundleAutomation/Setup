@@ -36,6 +36,22 @@ if (-not $githubToken) {
     }
 }
 
+# Check for domain configuration
+$apiDomain = [Environment]::GetEnvironmentVariable("API_DOMAIN", "Machine")
+$dashboardDomain = [Environment]::GetEnvironmentVariable("DASHBOARD_DOMAIN", "Machine")
+
+$usingDomains = ($apiDomain -ne $null -and $apiDomain -ne "localhost" -and 
+                $dashboardDomain -ne $null -and $dashboardDomain -ne "localhost")
+
+if ($usingDomains) {
+    Write-Host ""
+    Write-Host "Domain Configuration Detected:" -ForegroundColor Cyan
+    Write-Host "- API Domain: $apiDomain" -ForegroundColor Yellow
+    Write-Host "- Dashboard Domain: $dashboardDomain" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "Ensure your DNS records are properly configured to point to this server." -ForegroundColor Yellow
+}
+
 Write-Host ""
 Write-Host "Building and starting MetaBundle services..." -ForegroundColor Cyan
 
@@ -53,8 +69,15 @@ if (-not $apiPort) { $apiPort = "9090" }
 
 Write-Host ""
 Write-Host "MetaBundle services are running!" -ForegroundColor Green
-Write-Host "- Infrastructure API: http://localhost:$apiPort" -ForegroundColor Cyan
-Write-Host "- Dashboard: http://localhost:5001" -ForegroundColor Cyan
+
+if ($usingDomains) {
+    Write-Host "- Infrastructure API: https://$apiDomain" -ForegroundColor Cyan
+    Write-Host "- Dashboard: https://$dashboardDomain" -ForegroundColor Cyan
+} else {
+    Write-Host "- Infrastructure API: http://localhost:$apiPort" -ForegroundColor Cyan
+    Write-Host "- Dashboard: http://localhost:5001" -ForegroundColor Cyan
+}
+
 Write-Host ""
 Write-Host "To view logs, run: docker-compose logs -f" -ForegroundColor Yellow
-Write-Host "To stop services, run: .\stop-docker.ps1" -ForegroundColor Yellow
+Write-Host "To stop services, run: docker-compose down" -ForegroundColor Yellow

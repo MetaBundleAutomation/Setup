@@ -267,11 +267,19 @@ Write-ColorText "===============================================" -ForegroundCol
 # Ask if user wants to start the services now
 $startServices = Get-ValidatedInput -Prompt "Do you want to start the services now? (yes/no)" -Default "yes" -Validator {
     param($input)
-    if ($input -eq "yes" -or $input -eq "no") {
+    $input = $input.Trim().ToLower()
+    if ($input -eq "yes" -or $input -eq "no" -or $input -eq "y" -or $input -eq "n") {
         return $true
     }
     return $false
-} -ErrorMessage "Please enter 'yes' or 'no'."
+} -ErrorMessage "Please enter 'yes', 'no', 'y', or 'n'."
+
+# Convert y/n to yes/no for consistency
+if ($startServices -eq "y") {
+    $startServices = "yes"
+} elseif ($startServices -eq "n") {
+    $startServices = "no"
+}
 
 if ($startServices -eq "yes") {
     Write-ColorText "Starting Infrastructure Backend..." -ForegroundColor "Green"

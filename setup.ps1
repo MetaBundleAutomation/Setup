@@ -266,9 +266,9 @@ Write-ColorText "===============================================" -ForegroundCol
 
 # Ask if user wants to start the services now
 $startServices = Get-ValidatedInput -Prompt "Do you want to start the services now? (yes/no)" -Default "yes" -Validator {
-    param($input)
-    $input = $input.Trim().ToLower()
-    if ($input -eq "yes" -or $input -eq "no" -or $input -eq "y" -or $input -eq "n") {
+    param($userInput)
+    $userInput = "$userInput".Trim().ToLower()
+    if ($userInput -eq "yes" -or $userInput -eq "no" -or $userInput -eq "y" -or $userInput -eq "n") {
         return $true
     }
     return $false

@@ -194,7 +194,8 @@ $defaultDashboardPath = Join-Path -Path $parentPath -ChildPath "Dashboard"
 # Ask if user wants to clone repositories
 $cloneRepos = Get-ValidatedInput -Prompt "Do you want to clone the Infrastructure and Dashboard repositories? (yes/no)" -Default "yes" -Validator {
     param($input)
-    return $input -in @("yes", "no")
+    $input = $input.ToLower().Trim()
+    return $input -eq "yes" -or $input -eq "no"
 } -ErrorMessage "Please enter 'yes' or 'no'."
 
 if ($cloneRepos -eq "yes") {
@@ -279,14 +280,16 @@ Write-ColorText "Step 5: Environment Configuration..." -ForegroundColor "Green"
 $defaultEnvironment = if ($env:ENVIRONMENT) { $env:ENVIRONMENT } else { "development" }
 $environment = Get-ValidatedInput -Prompt "Enter the environment (development/production)" -Default $defaultEnvironment -Validator {
     param($env)
-    return $env -in @("development", "production")
+    $env = $env.ToLower().Trim()
+    return $env -eq "development" -or $env -eq "production"
 } -ErrorMessage "Please enter 'development' or 'production'."
 
 # Get test mode from environment variable or ask user
 $defaultTestMode = if ($env:METABUNDLE_TEST_MODE) { $env:METABUNDLE_TEST_MODE } else { "false" }
 $testMode = Get-ValidatedInput -Prompt "Run in test mode without Docker? (true/false)" -Default $defaultTestMode -Validator {
     param($mode)
-    return $mode -in @("true", "false")
+    $mode = $mode.ToLower().Trim()
+    return $mode -eq "true" -or $mode -eq "false"
 } -ErrorMessage "Please enter 'true' or 'false'."
 
 Write-ColorText "Environment: $environment" -ForegroundColor "Yellow"

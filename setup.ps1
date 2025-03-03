@@ -226,7 +226,31 @@ Write-ColorText "Test Mode: $testMode" -ForegroundColor "Yellow"
 Write-ColorText ""
 
 # Step 6: Create Environment Files
-Write-ColorText "Step 6: Creating Environment Files..." -ForegroundColor "Green"
+Write-ColorText "Step 6: Setting environment variables..." -ForegroundColor "Green"
+
+# Set global environment variables
+Write-ColorText "The following environment variables will be set:" -ForegroundColor "Yellow"
+Write-ColorText "GitHub Token: [Secured]" -ForegroundColor "Yellow"
+Write-ColorText "GitHub Organization: $githubOrg" -ForegroundColor "Yellow"
+Write-ColorText "Repository Base Directory: $repoBaseDir" -ForegroundColor "Yellow"
+Write-ColorText "API Port: $apiPort" -ForegroundColor "Yellow"
+Write-ColorText "WebSocket Port: $websocketPort" -ForegroundColor "Yellow"
+Write-ColorText "Environment: $environment" -ForegroundColor "Yellow"
+Write-ColorText "Test Mode: $testMode" -ForegroundColor "Yellow"
+Write-ColorText ""
+
+# Check if we're in the test environment and adjust ports to avoid conflicts
+if ($infrastructurePath -like "*MetaBundleTest*") {
+    # Use different ports for the test environment
+    $apiPort = "9080"
+    $websocketPort = "9081"
+    
+    # Update the global environment variables for the test environment
+    Write-ColorText "Test environment detected, adjusting ports:" -ForegroundColor "Yellow"
+    Write-ColorText "API Port: $apiPort" -ForegroundColor "Yellow"
+    Write-ColorText "WebSocket Port: $websocketPort" -ForegroundColor "Yellow"
+    Write-ColorText ""
+}
 
 # Set global environment variables
 Write-ColorText "Setting global environment variables..." -ForegroundColor "Green"
@@ -257,9 +281,13 @@ Write-ColorText "Secret Key: [Generated]" -ForegroundColor "Yellow"
 Write-ColorText ""
 
 # Step 8: Create .env files
-Write-ColorText "Step 8: Creating .env files..." -ForegroundColor "Green"
+Write-ColorText "Step 8: Creating backup .env files for development environments..." -ForegroundColor "Green"
 
-# Create Infrastructure .env file
+# Create backup .env files for development without setup script
+# These are only used as fallbacks if the environment variables are not set
+Write-ColorText "Creating backup .env files for development environments..." -ForegroundColor "Yellow"
+
+# Create Infrastructure .env file (as backup only)
 $infrastructureEnvContent = @"
 # GitHub Configuration
 GITHUB_TOKEN=$githubToken
@@ -277,43 +305,33 @@ ENVIRONMENT=$environment
 # Set to true to run in test mode (no Docker required)
 METABUNDLE_TEST_MODE=$testMode
 
-# Note: These values are also set as global environment variables
-# The Infrastructure service can use either the .env file or the global environment variables
+# Note: This file is only used as a fallback if the system environment variables are not set
+# The primary configuration comes from the system environment variables set by setup.ps1
 "@
-
-# Check if we're in the test environment and adjust ports to avoid conflicts
-if ($infrastructurePath -like "*MetaBundleTest*") {
-    # Use different ports for the test environment
-    $infrastructureEnvContent = $infrastructureEnvContent -replace "API_PORT=$apiPort", "API_PORT=9080"
-    $infrastructureEnvContent = $infrastructureEnvContent -replace "WEBSOCKET_PORT=$websocketPort", "WEBSOCKET_PORT=9081"
-    
-    # Also update the global environment variables for the test environment
-    Set-GlobalEnvironmentVariable -Name "API_PORT" -Value "9080"
-    Set-GlobalEnvironmentVariable -Name "WEBSOCKET_PORT" -Value "9081"
-}
 
 $infrastructureEnvPath = Join-Path -Path $infrastructurePath -ChildPath ".env"
 $infrastructureEnvContent | Out-File -FilePath $infrastructureEnvPath -Encoding utf8
-Write-ColorText "Created Infrastructure .env file at: $infrastructureEnvPath" -ForegroundColor "Yellow"
+Write-ColorText "Created Infrastructure backup .env file at: $infrastructureEnvPath" -ForegroundColor "Yellow"
 
-# Create .env file for Dashboard
+# Create .env file for Dashboard (as backup only)
 $dashboardEnvContent = @"
 # Dashboard Configuration
-INFRASTRUCTURE_API_URL=http://localhost:$apiPort
-DEBUG_MODE=true
+INFRASTRUCTURE_API_URL=$infrastructureApiUrl
+DEBUG_MODE=$debugMode
 SECRET_KEY=$secretKey
+
+# Note: This file is only used as a fallback if the system environment variables are not set
+# The primary configuration comes from the system environment variables set by setup.ps1
 "@
 
-# Check if we're in the test environment and adjust the API URL to match the test port
 if ($infrastructurePath -like "*MetaBundleTest*") {
-    $dashboardEnvContent = $dashboardEnvContent -replace "INFRASTRUCTURE_API_URL=http://localhost:$apiPort", "INFRASTRUCTURE_API_URL=http://localhost:9080"
     # Add host binding to avoid socket permission issues
     $dashboardEnvContent += "`nFLASK_RUN_HOST=127.0.0.1"
 }
 
 $dashboardEnvPath = Join-Path -Path $dashboardPath -ChildPath ".env"
 Set-Content -Path $dashboardEnvPath -Value $dashboardEnvContent
-Write-ColorText "Created Dashboard .env file at: $dashboardEnvPath" -ForegroundColor "Yellow"
+Write-ColorText "Created Dashboard backup .env file at: $dashboardEnvPath" -ForegroundColor "Yellow"
 Write-ColorText ""
 
 # Step 9: Summary and Next Steps

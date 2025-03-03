@@ -60,6 +60,38 @@ Create a `.env` file in the Dashboard directory using the template in `dashboard
 
 Follow the instructions in the "Next Steps" section after running the setup wizard.
 
+## Environment Variable Management
+
+MetaBundle uses a centralized approach to environment variable management:
+
+1. **Primary Configuration Source**: System environment variables set by the `setup.ps1` script
+2. **Fallback Configuration**: Local `.env` files (created by the setup script as backups)
+
+### How Configuration Works
+
+1. When you run the setup script, it:
+   - Collects all necessary configuration values
+   - Sets them as system environment variables
+   - Creates backup `.env` files for development environments
+
+2. Both the Dashboard and Infrastructure components:
+   - First look for system environment variables
+   - Only fall back to `.env` files if system variables are not found
+
+This approach ensures that:
+- Configuration is centralized and consistent
+- Services can run without modification in different environments
+- Development is simplified with fallback configuration
+
+### Manual Configuration (Not Recommended)
+
+If you choose not to use the setup script, you'll need to:
+
+1. Set the required environment variables manually in your system
+2. OR create `.env` files in both the Dashboard and Infrastructure directories
+
+See the "Configuration Reference" section below for the required variables.
+
 ## Configuration Reference
 
 ### Infrastructure Environment Variables

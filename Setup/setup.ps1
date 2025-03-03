@@ -89,6 +89,82 @@ function Get-ValidatedInput {
     return $userInput
 }
 
+# Function to get yes/no input
+function Get-YesNoInput {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Prompt,
+        
+        [Parameter(Mandatory = $false)]
+        [string]$Default = "yes"
+    )
+    
+    $promptText = if ($Default) { 
+        "$Prompt (yes/no) (default: $Default): " 
+    } else { 
+        "$Prompt (yes/no): " 
+    }
+    
+    do {
+        $userInput = Read-Host -Prompt $promptText
+        
+        if ([string]::IsNullOrWhiteSpace($userInput) -and $Default) {
+            $userInput = $Default
+        }
+        
+        $userInput = $userInput.ToLower().Trim()
+        $isValid = $userInput -eq "yes" -or $userInput -eq "no" -or $userInput -eq "y" -or $userInput -eq "n"
+        
+        if (-not $isValid) {
+            Write-Host "Please enter 'yes' or 'no'." -ForegroundColor Red
+        }
+    } while (-not $isValid)
+    
+    # Convert y/n to yes/no
+    if ($userInput -eq "y") { $userInput = "yes" }
+    if ($userInput -eq "n") { $userInput = "no" }
+    
+    return $userInput
+}
+
+# Function to get true/false input
+function Get-TrueFalseInput {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Prompt,
+        
+        [Parameter(Mandatory = $false)]
+        [string]$Default = "false"
+    )
+    
+    $promptText = if ($Default) { 
+        "$Prompt (true/false) (default: $Default): " 
+    } else { 
+        "$Prompt (true/false): " 
+    }
+    
+    do {
+        $userInput = Read-Host -Prompt $promptText
+        
+        if ([string]::IsNullOrWhiteSpace($userInput) -and $Default) {
+            $userInput = $Default
+        }
+        
+        $userInput = $userInput.ToLower().Trim()
+        $isValid = $userInput -eq "true" -or $userInput -eq "false" -or $userInput -eq "t" -or $userInput -eq "f"
+        
+        if (-not $isValid) {
+            Write-Host "Please enter 'true' or 'false'." -ForegroundColor Red
+        }
+    } while (-not $isValid)
+    
+    # Convert t/f to true/false
+    if ($userInput -eq "t") { $userInput = "true" }
+    if ($userInput -eq "f") { $userInput = "false" }
+    
+    return $userInput
+}
+
 # Function to create a .env file
 function Create-EnvFile {
     param (
@@ -235,11 +311,7 @@ $dashboardPath = Join-Path -Path $repoBaseDir -ChildPath "Dashboard"
 if ($NonInteractive) {
     $cloneRepos = $CloneRepos
 } else {
-    $cloneRepos = Get-ValidatedInput -Prompt "Do you want to clone the Infrastructure and Dashboard repositories? (yes/no)" -Default "yes" -Validator {
-        param($input)
-        $input = $input.ToString().ToLower().Trim()
-        return $input -eq "yes" -or $input -eq "no"
-    } -ErrorMessage "Please enter 'yes' or 'no'."
+    $cloneRepos = Get-YesNoInput -Prompt "Do you want to clone the Infrastructure and Dashboard repositories?" -Default "yes"
 }
 
 if ($cloneRepos -eq "yes") {
@@ -325,11 +397,7 @@ $defaultTestMode = if ($env:METABUNDLE_TEST_MODE) { $env:METABUNDLE_TEST_MODE } 
 if ($NonInteractive) {
     $testMode = $TestMode
 } else {
-    $testMode = Get-ValidatedInput -Prompt "Run in test mode without Docker? (true/false)" -Default $defaultTestMode -Validator {
-        param($mode)
-        $mode = $mode.ToString().ToLower().Trim()
-        return $mode -eq "true" -or $mode -eq "false"
-    } -ErrorMessage "Please enter 'true' or 'false'."
+    $testMode = Get-TrueFalseInput -Prompt "Run in test mode without Docker?" -Default $defaultTestMode
 }
 
 Write-ColorText "Environment: $environment" -ForegroundColor "Yellow"
@@ -414,10 +482,7 @@ Write-ColorText "Environment variables have been set and .env files have been cr
 Write-ColorText ""
 
 # Ask if user wants to start the services
-$startServices = Get-ValidatedInput -Prompt "Do you want to start the services now? (yes/no)" -Default "yes" -Validator {
-    param($input)
-    return $input -in @("yes", "no")
-} -ErrorMessage "Please enter 'yes' or 'no'."
+$startServices = Get-YesNoInput -Prompt "Do you want to start the services now?" -Default "yes"
 
 if ($startServices -eq "yes") {
     Write-ColorText "Starting Infrastructure Backend..." -ForegroundColor "Green"

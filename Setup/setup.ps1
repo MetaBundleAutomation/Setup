@@ -29,42 +29,35 @@ function Ensure-Directory {
 
 # Function to get user input with validation
 function Get-ValidatedInput {
-    param (
+    param(
         [Parameter(Mandatory = $true)]
         [string]$Prompt,
         
         [Parameter(Mandatory = $false)]
         [string]$Default = "",
         
-        [Parameter(Mandatory = $false)]
-        [scriptblock]$Validator = { $true },
+        [Parameter(Mandatory = $true)]
+        [scriptblock]$Validator,
         
         [Parameter(Mandatory = $false)]
         [string]$ErrorMessage = "Invalid input. Please try again."
     )
     
-    $promptText = $Prompt
-    if ($Default -ne "") {
-        $promptText += " (default: $Default)"
-    }
-    $promptText += ": "
+    $promptWithDefault = if ($Default) { "$Prompt (default: $Default): " } else { "$Prompt: " }
     
-    $input = ""
-    $isValid = $false
-    
-    while (-not $isValid) {
-        $input = Read-Host -Prompt $promptText
+    do {
+        $input = Read-Host -Prompt $promptWithDefault
         
-        if ($input -eq "" -and $Default -ne "") {
+        if ([string]::IsNullOrWhiteSpace($input) -and $Default) {
             $input = $Default
         }
         
         $isValid = & $Validator $input
         
         if (-not $isValid) {
-            Write-ColorText $ErrorMessage -ForegroundColor "Red"
+            Write-Host $ErrorMessage -ForegroundColor Red
         }
-    }
+    } while (-not $isValid)
     
     return $input
 }
@@ -194,7 +187,7 @@ $defaultDashboardPath = Join-Path -Path $parentPath -ChildPath "Dashboard"
 # Ask if user wants to clone repositories
 $cloneRepos = Get-ValidatedInput -Prompt "Do you want to clone the Infrastructure and Dashboard repositories? (yes/no)" -Default "yes" -Validator {
     param($input)
-    $input = $input.ToLower().Trim()
+    $input = $input.ToString().ToLower().Trim()
     return $input -eq "yes" -or $input -eq "no"
 } -ErrorMessage "Please enter 'yes' or 'no'."
 
@@ -280,7 +273,7 @@ Write-ColorText "Step 5: Environment Configuration..." -ForegroundColor "Green"
 $defaultEnvironment = if ($env:ENVIRONMENT) { $env:ENVIRONMENT } else { "development" }
 $environment = Get-ValidatedInput -Prompt "Enter the environment (development/production)" -Default $defaultEnvironment -Validator {
     param($env)
-    $env = $env.ToLower().Trim()
+    $env = $env.ToString().ToLower().Trim()
     return $env -eq "development" -or $env -eq "production"
 } -ErrorMessage "Please enter 'development' or 'production'."
 
@@ -288,7 +281,7 @@ $environment = Get-ValidatedInput -Prompt "Enter the environment (development/pr
 $defaultTestMode = if ($env:METABUNDLE_TEST_MODE) { $env:METABUNDLE_TEST_MODE } else { "false" }
 $testMode = Get-ValidatedInput -Prompt "Run in test mode without Docker? (true/false)" -Default $defaultTestMode -Validator {
     param($mode)
-    $mode = $mode.ToLower().Trim()
+    $mode = $mode.ToString().ToLower().Trim()
     return $mode -eq "true" -or $mode -eq "false"
 } -ErrorMessage "Please enter 'true' or 'false'."
 

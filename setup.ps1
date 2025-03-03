@@ -4,8 +4,8 @@
 # Function to display colored text
 function Write-ColorText {
     param (
-        [Parameter(Mandatory = $true)]
-        [string]$Text,
+        [Parameter(Mandatory = $false)]
+        [string]$Text = "",
         
         [Parameter(Mandatory = $false)]
         [string]$ForegroundColor = "White"

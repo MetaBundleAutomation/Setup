@@ -18,7 +18,10 @@ param (
     [string]$Environment,
     
     [Parameter(Mandatory = $false)]
-    [string]$TestMode
+    [string]$TestMode,
+    
+    [Parameter(Mandatory = $false)]
+    [string]$BaseDirectory
 )
 
 # Function to display colored text
@@ -210,11 +213,23 @@ Write-ColorText ""
 # Step 2: Repository Configuration
 Write-ColorText "Step 2: Repository Configuration..." -ForegroundColor "Green"
 
-# Define default paths
+# Get repository base directory
 $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 $parentPath = Split-Path -Parent $scriptPath
-$defaultInfrastructurePath = Join-Path -Path $parentPath -ChildPath "Infrastructure"
-$defaultDashboardPath = Join-Path -Path $parentPath -ChildPath "Dashboard"
+
+if ($NonInteractive -and $BaseDirectory) {
+    $repoBaseDir = $BaseDirectory
+} else {
+    $defaultRepoBaseDir = $parentPath
+    $repoBaseDir = Get-ValidatedInput -Prompt "Enter the repository base directory" -Default $defaultRepoBaseDir -Validator {
+        param($dir)
+        return Test-Path -Path $dir -IsValid
+    } -ErrorMessage "Invalid directory path. Please enter a valid path."
+}
+
+# Set paths for Infrastructure and Dashboard repositories
+$infrastructurePath = Join-Path -Path $repoBaseDir -ChildPath "Infrastructure"
+$dashboardPath = Join-Path -Path $repoBaseDir -ChildPath "Dashboard"
 
 # Ask if user wants to clone repositories
 if ($NonInteractive) {
@@ -229,21 +244,19 @@ if ($NonInteractive) {
 
 if ($cloneRepos -eq "yes") {
     # Clone Infrastructure repository
-    $infrastructureSuccess = Clone-Repository -RepoName "Infrastructure" -Organization $githubOrg -Token $githubToken -DestinationPath $defaultInfrastructurePath
+    $infrastructureSuccess = Clone-Repository -RepoName "Infrastructure" -Organization $githubOrg -Token $githubToken -DestinationPath $infrastructurePath
     
     # Clone Dashboard repository
-    $dashboardSuccess = Clone-Repository -RepoName "Dashboard" -Organization $githubOrg -Token $githubToken -DestinationPath $defaultDashboardPath
+    $dashboardSuccess = Clone-Repository -RepoName "Dashboard" -Organization $githubOrg -Token $githubToken -DestinationPath $dashboardPath
     
     if (-not $infrastructureSuccess -or -not $dashboardSuccess) {
         Write-ColorText "Failed to clone one or more repositories. Please check your GitHub token and organization name." -ForegroundColor "Red"
         exit 1
     }
     
-    $infrastructurePath = $defaultInfrastructurePath
-    $dashboardPath = $defaultDashboardPath
 } else {
     # Ask for Infrastructure path
-    $infrastructurePath = Get-ValidatedInput -Prompt "Enter the path to the Infrastructure directory" -Default $defaultInfrastructurePath -Validator {
+    $infrastructurePath = Get-ValidatedInput -Prompt "Enter the path to the Infrastructure directory" -Default $infrastructurePath -Validator {
         param($path)
         if (-not (Test-Path -Path $path)) {
             return $false
@@ -252,7 +265,7 @@ if ($cloneRepos -eq "yes") {
     } -ErrorMessage "Directory does not exist. Please enter a valid path."
     
     # Ask for Dashboard path
-    $dashboardPath = Get-ValidatedInput -Prompt "Enter the path to the Dashboard directory" -Default $defaultDashboardPath -Validator {
+    $dashboardPath = Get-ValidatedInput -Prompt "Enter the path to the Dashboard directory" -Default $dashboardPath -Validator {
         param($path)
         if (-not (Test-Path -Path $path)) {
             return $false
@@ -267,16 +280,6 @@ Write-ColorText ""
 
 # Step 3: Docker Configuration
 Write-ColorText "Step 3: Docker Configuration..." -ForegroundColor "Green"
-
-# Get repository base directory from environment variable or ask user
-$defaultRepoBaseDir = if ($env:REPO_BASE_DIR) { $env:REPO_BASE_DIR } else { "C:/repos/metabundle_repos" }
-$repoBaseDir = Get-ValidatedInput -Prompt "Enter the repository base directory" -Default $defaultRepoBaseDir -Validator {
-    param($dir)
-    return $dir -ne ""
-} -ErrorMessage "Repository base directory cannot be empty."
-
-# Create the repository base directory if it doesn't exist
-Ensure-Directory -Path $repoBaseDir
 
 Write-ColorText "Repository Base Directory: $repoBaseDir" -ForegroundColor "Yellow"
 Write-ColorText ""

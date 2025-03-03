@@ -183,16 +183,22 @@ Write-ColorText "Step 4: API Configuration..." -ForegroundColor "Green"
 # Get API port from environment variable or ask user
 $defaultApiPort = if ($env:API_PORT) { $env:API_PORT } else { "8000" }
 $apiPort = Get-ValidatedInput -Prompt "Enter the API port" -Default $defaultApiPort -Validator {
-    param($input)
-    return $input -match "^\d+$"
-} -ErrorMessage "Please enter a valid port number."
+    param($userInput)
+    if ($userInput -match "^\d+$" -and [int]$userInput -gt 0 -and [int]$userInput -lt 65536) {
+        return $true
+    }
+    return $false
+} -ErrorMessage "Please enter a valid port number between 1 and 65535."
 
 # Get WebSocket port from environment variable or ask user
 $defaultWebsocketPort = if ($env:WEBSOCKET_PORT) { $env:WEBSOCKET_PORT } else { "8001" }
 $websocketPort = Get-ValidatedInput -Prompt "Enter the WebSocket port" -Default $defaultWebsocketPort -Validator {
-    param($input)
-    return $input -match "^\d+$"
-} -ErrorMessage "Please enter a valid port number."
+    param($userInput)
+    if ($userInput -match "^\d+$" -and [int]$userInput -gt 0 -and [int]$userInput -lt 65536) {
+        return $true
+    }
+    return $false
+} -ErrorMessage "Please enter a valid port number between 1 and 65535."
 
 Write-ColorText "API Port: $apiPort" -ForegroundColor "Yellow"
 Write-ColorText "WebSocket Port: $websocketPort" -ForegroundColor "Yellow"

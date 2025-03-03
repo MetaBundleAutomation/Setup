@@ -63,23 +63,27 @@ function Get-ValidatedInput {
         [string]$ErrorMessage = "Invalid input. Please try again."
     )
     
-    $promptWithDefault = if ($Default) { "$Prompt (default: $Default): " } else { "$Prompt: " }
+    $promptText = if ($Default) { 
+        "$Prompt (default: $Default): " 
+    } else { 
+        "$Prompt`: " 
+    }
     
     do {
-        $input = Read-Host -Prompt $promptWithDefault
+        $userInput = Read-Host -Prompt $promptText
         
-        if ([string]::IsNullOrWhiteSpace($input) -and $Default) {
-            $input = $Default
+        if ([string]::IsNullOrWhiteSpace($userInput) -and $Default) {
+            $userInput = $Default
         }
         
-        $isValid = & $Validator $input
+        $isValid = & $Validator $userInput
         
         if (-not $isValid) {
             Write-Host $ErrorMessage -ForegroundColor Red
         }
     } while (-not $isValid)
     
-    return $input
+    return $userInput
 }
 
 # Function to create a .env file

@@ -1,6 +1,13 @@
 # MetaBundle Setup Repository
 
-This repository contains the setup scripts and Docker configuration for the MetaBundle system.
+This repository provides an automated setup process for the MetaBundle infrastructure and dashboard.
+
+## Overview
+
+MetaBundle consists of two main components:
+
+1. **Infrastructure Backend**: Manages GitHub repositories and Docker containers
+2. **Dashboard Frontend**: Provides a user interface to monitor and manage the infrastructure
 
 ## Repository Structure
 
@@ -26,6 +33,10 @@ This repository contains the setup scripts and Docker configuration for the Meta
 - Rebuild containers: `powershell -ExecutionPolicy Bypass -File ".\Setup\run-docker-with-env.ps1" -Rebuild`
 - Stop containers: `powershell -ExecutionPolicy Bypass -File ".\Setup\stop-docker.ps1"`
 - View logs: `docker-compose logs -f`
+
+## Environment Variables
+
+MetaBundle uses a centralized approach to environment variable management where system environment variables set by the setup.ps1 script are the primary source of configuration, with .env files used only as fallbacks.
 
 ## Documentation
 

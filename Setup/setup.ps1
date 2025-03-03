@@ -1,6 +1,26 @@
 # MetaBundle Setup Script
 # This script guides users through setting up the MetaBundle infrastructure and dashboard
 
+param (
+    [Parameter(Mandatory = $false)]
+    [switch]$NonInteractive,
+    
+    [Parameter(Mandatory = $false)]
+    [string]$GitHubToken,
+    
+    [Parameter(Mandatory = $false)]
+    [string]$GitHubOrg,
+    
+    [Parameter(Mandatory = $false)]
+    [string]$CloneRepos,
+    
+    [Parameter(Mandatory = $false)]
+    [string]$Environment,
+    
+    [Parameter(Mandatory = $false)]
+    [string]$TestMode
+)
+
 # Function to display colored text
 function Write-ColorText {
     param (
@@ -159,17 +179,25 @@ Write-ColorText "If you don't have one, create it at: https://github.com/setting
 
 # Get GitHub token from environment variable or ask user
 $defaultGithubToken = if ($env:GITHUB_TOKEN) { $env:GITHUB_TOKEN } else { "" }
-$githubToken = Get-ValidatedInput -Prompt "Enter your GitHub Personal Access Token" -Default $defaultGithubToken -Validator {
-    param($token)
-    return $token -ne ""
-} -ErrorMessage "GitHub token cannot be empty."
+if ($NonInteractive) {
+    $githubToken = $GitHubToken
+} else {
+    $githubToken = Get-ValidatedInput -Prompt "Enter your GitHub Personal Access Token" -Default $defaultGithubToken -Validator {
+        param($token)
+        return $token -ne ""
+    } -ErrorMessage "GitHub token cannot be empty."
+}
 
 # Get GitHub organization from environment variable or ask user
 $defaultGithubOrg = if ($env:GITHUB_ORG) { $env:GITHUB_ORG } else { "MetaBundleAutomation" }
-$githubOrg = Get-ValidatedInput -Prompt "Enter your GitHub organization name" -Default $defaultGithubOrg -Validator {
-    param($org)
-    return $org -ne ""
-} -ErrorMessage "GitHub organization cannot be empty."
+if ($NonInteractive) {
+    $githubOrg = $GitHubOrg
+} else {
+    $githubOrg = Get-ValidatedInput -Prompt "Enter your GitHub organization name" -Default $defaultGithubOrg -Validator {
+        param($org)
+        return $org -ne ""
+    } -ErrorMessage "GitHub organization cannot be empty."
+}
 
 Write-ColorText "GitHub Token: $('*' * [Math]::Min($githubToken.Length, 10))..." -ForegroundColor "Yellow"
 Write-ColorText "GitHub Organization: $githubOrg" -ForegroundColor "Yellow"
@@ -185,11 +213,15 @@ $defaultInfrastructurePath = Join-Path -Path $parentPath -ChildPath "Infrastruct
 $defaultDashboardPath = Join-Path -Path $parentPath -ChildPath "Dashboard"
 
 # Ask if user wants to clone repositories
-$cloneRepos = Get-ValidatedInput -Prompt "Do you want to clone the Infrastructure and Dashboard repositories? (yes/no)" -Default "yes" -Validator {
-    param($input)
-    $input = $input.ToString().ToLower().Trim()
-    return $input -eq "yes" -or $input -eq "no"
-} -ErrorMessage "Please enter 'yes' or 'no'."
+if ($NonInteractive) {
+    $cloneRepos = $CloneRepos
+} else {
+    $cloneRepos = Get-ValidatedInput -Prompt "Do you want to clone the Infrastructure and Dashboard repositories? (yes/no)" -Default "yes" -Validator {
+        param($input)
+        $input = $input.ToString().ToLower().Trim()
+        return $input -eq "yes" -or $input -eq "no"
+    } -ErrorMessage "Please enter 'yes' or 'no'."
+}
 
 if ($cloneRepos -eq "yes") {
     # Clone Infrastructure repository
@@ -271,19 +303,27 @@ Write-ColorText "Step 5: Environment Configuration..." -ForegroundColor "Green"
 
 # Get environment from environment variable or ask user
 $defaultEnvironment = if ($env:ENVIRONMENT) { $env:ENVIRONMENT } else { "development" }
-$environment = Get-ValidatedInput -Prompt "Enter the environment (development/production)" -Default $defaultEnvironment -Validator {
-    param($env)
-    $env = $env.ToString().ToLower().Trim()
-    return $env -eq "development" -or $env -eq "production"
-} -ErrorMessage "Please enter 'development' or 'production'."
+if ($NonInteractive) {
+    $environment = $Environment
+} else {
+    $environment = Get-ValidatedInput -Prompt "Enter the environment (development/production)" -Default $defaultEnvironment -Validator {
+        param($env)
+        $env = $env.ToString().ToLower().Trim()
+        return $env -eq "development" -or $env -eq "production"
+    } -ErrorMessage "Please enter 'development' or 'production'."
+}
 
 # Get test mode from environment variable or ask user
 $defaultTestMode = if ($env:METABUNDLE_TEST_MODE) { $env:METABUNDLE_TEST_MODE } else { "false" }
-$testMode = Get-ValidatedInput -Prompt "Run in test mode without Docker? (true/false)" -Default $defaultTestMode -Validator {
-    param($mode)
-    $mode = $mode.ToString().ToLower().Trim()
-    return $mode -eq "true" -or $mode -eq "false"
-} -ErrorMessage "Please enter 'true' or 'false'."
+if ($NonInteractive) {
+    $testMode = $TestMode
+} else {
+    $testMode = Get-ValidatedInput -Prompt "Run in test mode without Docker? (true/false)" -Default $defaultTestMode -Validator {
+        param($mode)
+        $mode = $mode.ToString().ToLower().Trim()
+        return $mode -eq "true" -or $mode -eq "false"
+    } -ErrorMessage "Please enter 'true' or 'false'."
+}
 
 Write-ColorText "Environment: $environment" -ForegroundColor "Yellow"
 Write-ColorText "Test Mode: $testMode" -ForegroundColor "Yellow"

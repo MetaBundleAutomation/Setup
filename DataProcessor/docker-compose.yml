@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  llm-service:
+    image: deepseek/deepseek-coder:1.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/app/models
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - MODEL_PATH=/app/models/deepseek-v1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+
+  scraper-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - llm-service
+    command: python src/main.py
+    restart: unless-stopped

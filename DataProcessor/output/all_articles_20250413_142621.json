@@ -1,0 +1,530 @@
+[
+  {
+    "url": "https://www.cnbc.com/quotes/AAPL",
+    "title": "Stock Price, Quote and News",
+    "source": "cnbc.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Apple Inc. designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services. Its product categories include iPhone, Mac, i...",
+    "keywords": [],
+    "images": [
+      "https://static-redesign.cnbcfm.com/dist/7821ea3cb72f88388591.svg",
+      "https://static-redesign.cnbcfm.com/dist/09c161b9810767a7849e.svg",
+      "https://static-redesign.cnbcfm.com/dist/2469ed0a9a4cafdf055e.svg"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://www.marketwatch.com/investing/stock/aapl",
+    "title": "Apple Inc. Stock Quote (U.S.: Nasdaq)",
+    "source": "marketwatch.com",
+    "publish_date": null,
+    "authors": [
+      "Emily Bary",
+      "Marketwatch Automation",
+      "Philip Van Doorn",
+      "Therese Poletti"
+    ],
+    "content_snippet": "Apple Inc.\n\nApple, Inc. engages in the design, manufacture, and sale of smartphones, personal computers, tablets, wearables and accessories, and other varieties of related services. It operates throug...",
+    "keywords": [],
+    "images": [
+      "https://s.wsj.net/public/resources/MWimages/MW-EG169_articl_NS_20160223171404.png"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://www.investopedia.com/apple-stock-leads-big-tech-rebound-tariff-sell-off-11712003",
+    "title": "Apple Stock Leads Tech Rebound After Worst 4-Day Stretch Since 2000",
+    "source": "investopedia.com",
+    "publish_date": null,
+    "authors": [
+      "Colin Laidley",
+      "Learn About Our",
+      "Editorial Policies"
+    ],
+    "content_snippet": "Apple (AAPL) stock rebounded from its worst 4-day stretch since 2000 on Wednesday as investors cheered President Trump's announcement of a temporary reprieve from most of the sweeping tariffs imposed ...",
+    "keywords": [],
+    "images": [
+      "https://www.investopedia.com/thmb/MAxY58og6iAWMr_KFMbyDj_G-FM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-2208539558-1ab252dc81d54eac86d823b569c49f9d.jpg",
+      "https://www.investopedia.com/thmb/gFLUgE8pBZWH1yPtfRPj6ErDTpc=/282x188/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-2207863842-4e76ee56794d446591969353c288cd5c.jpg",
+      "https://www.investopedia.com/thmb/TlZx5cEymQhQ7DOzSNT4QuUc2wQ=/282x188/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-2208491444-58f5da6c39344972851b700bf0fd393f.jpg"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://www.morningstar.com/news/marketwatch/20250402543/apples-stock-is-getting-pounded-on-tariff-news-dont-freak-out-just-yet",
+    "title": "Apple's stock is getting pounded on tariff news. Don't freak out just yet.",
+    "source": "morningstar.com",
+    "publish_date": "2025-04-02 19:06:00-05:00",
+    "authors": [],
+    "content_snippet": "By Laila Maidan and Emily Bary\n\nApple has a loyal customer base, strong gross margins - and a history of getting tariff exemptions\n\nPresident Donald Trump sent ripples across the technology sector on ...",
+    "keywords": [],
+    "images": [
+      "https://images.contentstack.io/v3/assets/blt4eb669caa7dc65b2/blt39ce1d6a5e7be3d0/60809fdf6371c75a11ada75c/transparency.svg",
+      "https://morningstar-morningstar-prod.web.arc-cdn.net/resizer/yyUkmHwdG1F9Npp6twsASMPmEVI=/2400x2400/cloudfront-us-east-1.images.arcpublishing.com/morningstar/SSBM2OS7KBCFPOUUORBJEOXENE.png",
+      "https://images.contentstack.io/v3/assets/blt4eb669caa7dc65b2/blt218bb7805fb32c9a/60809fdfb35a7a3c69a379ff/personal-data.svg"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://www.tipranks.com/news/weekend-updates/apples-stock-soars-amid-strategic-shifts",
+    "title": "Apple\u2019s Stock Soars Amid Strategic Shifts",
+    "source": "tipranks.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Apple ( (AAPL) ) has risen by 9.20%. Read on to learn why.\n\nApple\u2019s stock has seen a significant rise of 9.20% over the past week, driven by strategic shifts and market dynamics. The tech giant is act...",
+    "keywords": [],
+    "images": [
+      "https://tr-cdn.tipranks.com/static/v2/static/images/content/logoAssets/tslaGray.svg",
+      "https://tr-cdn.tipranks.com/static/v2/static/images/logo/instagram/instagram.svg",
+      "https://tr-cdn.tipranks.com/static/v2/static/images/content/logoAssets/aapleGray.svg"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://www.nasdaq.com/market-activity/stocks/aapl/after-hours",
+    "title": "Apple (AAPL) After-Hours Quotes",
+    "source": "nasdaq.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Investors may trade in the Pre-Market (4:00-9:30 a.m. ET) and the After Hours Market (4:00-8:00 p.m. ET). Participation from Market Makers and ECNs is strictly voluntary and as a result, these session...",
+    "keywords": [],
+    "images": [
+      "https://www.nasdaq.com/themes/nsdq/src/assets/images/circle-info.svg",
+      "https://www.nasdaq.com/themes/nsdq/src/assets/images/NasdaqLink.svg",
+      "https://www.nasdaq.com/sites/acquia.prod/files/favicon.ico"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://seekingalpha.com/article/4773997-apple-stock-is-the-first-place-to-look-for-a-bounce",
+    "title": "Apple (AAPL) Stock Is The First Place To Look For A Bounce",
+    "source": "seekingalpha.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "I've written about Apple (NASDAQ: AAPL ) (TSX: AAPL:CA ) several times over the past year, almost as a surprise to myself. I'm a value and contrarian investor who doesn't often peddle in high-octane s...",
+    "keywords": [],
+    "images": [
+      "https://static1.seekingalpha.com/images/users_profile/011/618/321/small_pic.png",
+      "https://static1.seekingalpha.com/images/users_profile/011/618/321/medium_pic.png",
+      "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/498421296/image_498421296.jpg?io=getty-c-w750"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://robinhood.com/stocks/AAPL?source=search",
+    "title": "Buy or Sell Apple Stock - AAPL Stock Price Quote & News",
+    "source": "robinhood.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Benzinga 2d\n\nAs Apple Sheds Over $500 Billion In Market Cap Since Trump's 'Liberation Day,' Top Analysts Weigh In On Its Path Ahead\n\nAmid the ongoing trade war between the U.S. and China, Apple Inc. A...",
+    "keywords": [],
+    "images": [
+      "https://images.robinhood.com/ulekdMMVHEqO4bFVOPt8opJyYAw/aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL0o2X2NvRmJvZ3hoUkk5aU04NjROTF9saUdYdnNRcDJBdXBzS2VpN3owY05OZkR2R1VtV1V5MjBudVVoa1JFUXlycFk0YkVlSUJ1Yz1zMC13MzAwLXJ3",
+      "https://images.robinhood.com/hoVszWtcmSWmZB8L6JCZ65_PqjA/aHR0cHM6Ly9jZG4uYmVuemluZ2EuY29tL2ZpbGVzL2ltYWdlcy9zdG9yeS8yMDI1LzA0LzEwL0FwcGxlcy0xNmUtQ3V0cy1Db3JuZXJzLUZvci02MDAtUHJpY2UtVGEuanBlZz93aWR0aD0xMjAwJmhlaWdodD04MDAmZml0PWNyb3A",
+      "https://images.robinhood.com/J1c5TlQFxg3Cod8yMpiEHTvI7e0/aHR0cHM6Ly9jZG4uYmVuemluZ2EuY29tL2ZpbGVzL2ltYWdlcy9zdG9yeS8yMDI1LzA0LzExL1RoZS1NYWduaWZpY2VudC1TZXZlbi0tNy1PZi1UaGUtTGFyZ2VzdC0uanBlZz93aWR0aD0xMjAwJmhlaWdodD04MDAmZml0PWNyb3A"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://www.forbes.com/sites/greatspeculations/2025/04/10/how-apple-stock-recovers-to-250/",
+    "title": "How Apple Stock Recovers To $250",
+    "source": "forbes.com",
+    "publish_date": "2025-04-10 00:00:00",
+    "authors": [
+      "Trefis Team"
+    ],
+    "content_snippet": "Apple iPhones are displayed in a store in Washington, DC, on April 08, 2025. (Photo by Roberto ... More SCHMIDT / AFP) (Photo by ROBERTO SCHMIDT/AFP via Getty Images) AFP via Getty Images\n\nTrefis\n\nApp...",
+    "keywords": [],
+    "images": [
+      "https://imageio.forbes.com/specials-images/imageserve/67f69f6b437dbd4723ffc0b7/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+      "https://blogs-images.forbes.com/assets/images/avatars/blog-25_136_967b934396178738248519fd6ae13e43.jpg"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://www.stocktitan.net/news/AAPL/apple-s-worldwide-developers-conference-returns-the-week-of-june-1lqsqbwn93u5.html",
+    "title": "WWDC25: Apple Developer Conference Returns with Apple Park Experience",
+    "source": "stocktitan.net",
+    "publish_date": "2025-03-25 17:00:00+00:00",
+    "authors": [],
+    "content_snippet": "Apple\u2019s Worldwide Developers Conference returns the week of June 9\n\n03/25/2025 - 01:00 PM\n\nWWDC25 will be available entirely online and is free for all developers\n\nCUPERTINO, Calif. --(BUSINESS WIRE)-...",
+    "keywords": [],
+    "images": [
+      "https://static.stocktitan.net/company-logo/hit-sm-ext.png",
+      "https://static.stocktitan.net/company-logo/ual-sm-ext.png",
+      "https://cts.businesswire.com/ct/CT?id=bwnews&sty=20250325934944r1&sid=acqr8&distro=nx&lang=en"
+    ],
+    "ticker": "AAPL",
+    "extracted_at": "2025-04-13T14:25:40.984745"
+  },
+  {
+    "url": "https://www.morningstar.com/stocks/xnas/msft/quote",
+    "title": "Microsoft Corp MSFT",
+    "source": "morningstar.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Microsoft is one of two public cloud providers that can deliver a wide variety of PaaS/IaaS solutions at scale. Based on its investment in OpenAI, the company has also emerged as a leader in AI. Micro...",
+    "keywords": [],
+    "images": [
+      "https://images.contentstack.io/v3/assets/blt4eb669caa7dc65b2/blt39ce1d6a5e7be3d0/60809fdf6371c75a11ada75c/transparency.svg",
+      "https://images.contentstack.io/v3/assets/blt4eb669caa7dc65b2/blt218bb7805fb32c9a/60809fdfb35a7a3c69a379ff/personal-data.svg",
+      "https://images.contentstack.io/v3/assets/blt4eb669caa7dc65b2/blta7dd42ebdd7b93b8/61899b34a3c7df383578294c/morningstar-og.png"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://www.stocktitan.net/news/MSFT/microsoft-responds-to-trc-capital-s-mini-tender-l2q1pi95x964.html",
+    "title": "Microsoft Alerts Shareholders About TRC Capital Mini-Tender Offer",
+    "source": "stocktitan.net",
+    "publish_date": "2025-03-17 22:14:00+00:00",
+    "authors": [],
+    "content_snippet": "REDMOND, Wash. , March 17, 2025 /PRNewswire/ -- Microsoft Corp. has received notice of an unsolicited \"mini-tender\" offer by TRC Capital Investment Corporation (TRC) dated Feb.21, 2025, to purchase up...",
+    "keywords": [],
+    "images": [
+      "https://static.stocktitan.net/company-logo/hit-sm-ext.png",
+      "https://static.stocktitan.net/company-logo/ual-sm-ext.png",
+      "https://static.stocktitan.net/company-logo/msft-lg.png"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://www.nasdaq.com/market-activity/stocks/msft/news-headlines",
+    "title": "Microsoft Corporation (MSFT) News Headlines",
+    "source": "nasdaq.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Your symbols have been updated\n\nYou'll now be able to see real-time price and activity for your symbols on the My Quotes of Nasdaq.com.\n\nContinue",
+    "keywords": [],
+    "images": [
+      "https://www.nasdaq.com/akam/13/pixel_47437b1?a=dD0yYmYxYWRkNTlhN2E2ODRhODY5ZDlkYWE0MjQ2ZGQzODE1OGEwZTIxJmpzPW9mZg==",
+      "https://www.nasdaq.com/sites/acquia.prod/files/favicon.ico",
+      "https://www.nasdaq.com/themes/nsdq/dist/assets/images/circle-info.svg"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://www.theglobeandmail.com/investing/markets/stocks/MSFT-Q/",
+    "title": "Microsoft Corp (MSFT-Q) Stock Price and News",
+    "source": "theglobeandmail.com",
+    "publish_date": null,
+    "authors": [
+      "Tim Shufelt"
+    ],
+    "content_snippet": "Microsoft Corporation is one of the largest broad-based technology providers in the world. The company dominates the PC software market with more than 80% of the market share for operating systems. Th...",
+    "keywords": [],
+    "images": [
+      "https://www.theglobeandmail.com/resizer/v2/https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F814526%2Fgettyimages-1347310377.jpg?auth=dea2d7c986e6255606b67cdcd375f6c2ca7407cc153cff01e56e50515ec15b80&width=300&height=200&quality=80&smart=true",
+      "https://www.theglobeandmail.com/resizer/v2/https%3A%2F%2Fmedia.barchart.com%2Fcontributors-admin%2Fcommon-images%2Fimages%2FS%2526P%2520500%2520Companies%2FTechnology%2520(names%2520J%2520-%2520Z)%2FMicrosoft%2520Corporation%2520logo%2520on%2520sign-by%2520Jean-Luc%2520Ichard%2520via%2520iStock.jpg?auth=ed9602a4c37207a96f0c3b86e74c35e60c58ea6509283e74aa73303c51ea11a5&width=300&height=200&quality=80&smart=true",
+      "https://www.theglobeandmail.com/resizer/v2/https%3A%2F%2Fmedia.barchart.com%2Fcontributors-admin%2Fcommon-images%2Fimages%2FTech%2520(Ecommerce%252C%2520Social%2520Media%252C%2520etc.)%2FAmazon%2520pickup%2520%2526%2520returns%2520building%2520by%2520Bryan%2520Angelo%2520via%2520Unsplash.jpg?auth=86cb26e4d3ab4dbde06c4980518d021334d5e5a579e5e11ed19aba612bf9909b&width=300&height=200&quality=80&smart=true"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://www.tipranks.com/news/middle-management-cuts-coming-to-microsoft-as-microsoft-stock-nasdaqmsft-surges",
+    "title": "\u201cMiddle Management\u201d Cuts Coming to Microsoft as Microsoft Stock (NASDAQ:MSFT) Surges",
+    "source": "tipranks.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "While most stocks this afternoon got a bump from planned tariff relief for many countries willing to negotiate with the Trump Administration, tech giant Microsoft (MSFT) proved no different. A combina...",
+    "keywords": [],
+    "images": [
+      "https://blog.tipranks.com/wp-content/uploads/2025/04/Screenshot-2025-04-09-at-15-59-37-Microsoft-MSFT-Stock-Forecast-Price-Targets-and-Analysts-Predictions-1024x749.png",
+      "https://tr-cdn.tipranks.com/static/v2/static/images/content/logoAssets/tslaGray.svg",
+      "https://tr-cdn.tipranks.com/static/v2/static/images/logo/instagram/instagram.svg"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://seekingalpha.com/symbol/MSFT",
+    "title": "Microsoft Corporation (MSFT) Stock Price, Quote, News & Analysis",
+    "source": "seekingalpha.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Microsoft Corporation develops and supports software, services, devices and solutions worldwide. The Productivity and Business Processes segment offers office, exchange, SharePoint, Microsoft Teams, o...",
+    "keywords": [],
+    "images": [
+      "https://static.seekingalpha.com/cdn/s3/company_logos/logo_vector_light/MSFT.svg",
+      "https://static1.seekingalpha.com/images/users_profile/021/001/961/big_pic.png?io=w36",
+      "https://static1.seekingalpha.com/images/users_profile/060/875/609/big_pic.png?io=w36"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://www.aol.com/microsoft-msft-chipotle-cmg-hit-190440605.html",
+    "title": "Microsoft (MSFT) and Chipotle (CMG) Hit Yearly Lows. Are They Stocks To Buy Now?",
+    "source": "aol.com",
+    "publish_date": null,
+    "authors": [
+      "Aol Staff",
+      "Rich Duprey",
+      "March",
+      "At Am"
+    ],
+    "content_snippet": "Buying low and selling high -- it\u2019s the stock market\u2019s golden rule. Grab a cheap stock, ride it up, and cash out with fat profits. Sounds simple, right? But when a stock hits a 52-week low, it\u2019s actua...",
+    "keywords": [],
+    "images": [
+      "https://s.aolcdn.com/images/dims?format=jpg&quality=80&thumbnail=400%2C200%2Cauto&image_uri=https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2021-07%2F91ec1bd0-eacc-11eb-bfd6-0ac88d11ccc3&client=76f99bdb8f78cd44cc0b&signature=8fab918dd959c9039225b38766aab7335bf82ccf",
+      "https://s.aolcdn.com/images/dims?format=jpg&quality=80&thumbnail=400%2C200%2Cauto&image_uri=https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2025-04%2F45e17be0-16f1-11f0-9fb6-ac033f705e6c&client=76f99bdb8f78cd44cc0b&signature=fc72b2ea1a7bc5ecdb0ffeccf52c2a1b64888e8b",
+      "https://s.aolcdn.com/images/dims?thumbnail=16%2C16%2Cauto&image_uri=https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2024-11%2Fd2877ae0-9dcf-11ef-b36e-5dae05ed7c8d&client=76f99bdb8f78cd44cc0b&signature=ee0b95477500453d17b8df2d21791afc3e36b779"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://www.schwab.com/research/stocks/quotes/chart/MSFT",
+    "title": "Charles Schwab",
+    "source": "schwab.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "More choices. More ways to invest how you want.\n\nExplore ways to invest",
+    "keywords": [],
+    "images": [
+      "https://www.schwab.com/themes/custom/schwabcog/images/charles_schwab_logo_720x400.png",
+      "https://www.schwab.com/themes/custom/sch_retail/imgs/oyt.png"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://markets.businessinsider.com/news/stocks/msft-ko-race-morgan-stanley-lists-30-stocks-that-can-weather-the-market-storm-1034480041",
+    "title": "MSFT, KO, RACE: Morgan Stanley Lists 30 Stocks That Can Weather the Market Storm",
+    "source": "markets.businessinsider.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "U.S. investment bank Morgan Stanley (MS) has listed the stocks it feels can carry investors through the current market storm.\n\nLight Up your Portfolio with Spark:\n\nEasily identify stocks' risks and op...",
+    "keywords": [],
+    "images": [
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E",
+      "https://markets.businessinsider.com/public/assets/INSIDER/US/logos/Insider-logo-dark-opt.svg",
+      "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSI5OTk5OXB4IiBoZWlnaHQ9Ijk5OTk5cHgiIHZpZXdCb3g9IjAgMCA5OTk5OSA5OTk5OSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZyBzdHJva2U9Im5vbmUiIGZpbGw9Im5vbmUiIGZpbGwtb3BhY2l0eT0iMCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9Ijk5OTk5IiBoZWlnaHQ9Ijk5OTk5Ij48L3JlY3Q+IDwvZz4gPC9zdmc+"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://www.cnbc.com/2025/03/30/top-wall-street-analysts-are-confident-about-the-prospects-of-these-3-stocks-.html",
+    "title": "Top Wall Street analysts are confident about the prospects for these 3 stocks",
+    "source": "cnbc.com",
+    "publish_date": "2025-03-30 00:00:00",
+    "authors": [
+      "Tipranks.Com Staff"
+    ],
+    "content_snippet": "Tariffs under the Trump administration have triggered concerns about the impact on demand and fears of a potential recession, roiling the stock market.\n\nAmid the ongoing volatility, the pullback in se...",
+    "keywords": [],
+    "images": [
+      "https://static-redesign.cnbcfm.com/dist/7821ea3cb72f88388591.svg",
+      "https://static-redesign.cnbcfm.com/dist/09c161b9810767a7849e.svg",
+      "https://static-redesign.cnbcfm.com/dist/2469ed0a9a4cafdf055e.svg"
+    ],
+    "ticker": "MSFT",
+    "extracted_at": "2025-04-13T14:26:02.570054"
+  },
+  {
+    "url": "https://www.cnbc.com/quotes/GOOGL",
+    "title": "Stock Price, Quote and News",
+    "source": "cnbc.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Alphabet Inc. is a holding company. The Company's segments include Google Services, Google Cloud, and Other Bets. The Google Services segment includes products and services such as ads, Android, Chrom...",
+    "keywords": [],
+    "images": [
+      "https://static-redesign.cnbcfm.com/dist/7821ea3cb72f88388591.svg",
+      "https://static-redesign.cnbcfm.com/dist/09c161b9810767a7849e.svg",
+      "https://static-redesign.cnbcfm.com/dist/2469ed0a9a4cafdf055e.svg"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://www.reuters.com/markets/companies/GOOGL.O",
+    "title": "Stock Price & Latest News",
+    "source": "reuters.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Company Information\n\nAlphabet Inc. is a holding company. The Company's segments include Google Services, Google Cloud, and Other Bets. The Google Services segment includes products and services such a...",
+    "keywords": [],
+    "images": [
+      "https://www.reuters.com/resizer/v2/LBQEVL6Q6VKQ7IB64OYQUQOOOY.jpg?auth=ad3a449b6379455d236b43cb32b45dc3db06d053432bffa0d01df4db34c29ad8&width=960&quality=80",
+      "https://www.reuters.com/resizer/v2/SQUZXZF6CZMMTPIENRGTEBHGXM.jpg?auth=f4fdf86b19ee647ec415d1fa3c35b82eaf6f4422da7d57d8933252a7668d5619&width=960&quality=80",
+      "https://www.reuters.com/resizer/v2/N2BP7EG3TFOGHDALJQFT3IE6ZY.jpg?auth=3ba5fe2dfdc91203fe4c5cea61ca6bb653a74f8e241213401553a621fb87f3a7&width=960&quality=80"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "http://abc.xyz/investor",
+    "title": "Investor Updates",
+    "source": "abc.xyz",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "To subscribe to email alerts, please enter your email address in the field below and select the alerts you would like to receive\n\nAll SEC Filings Quarterly and Annual Reports Proxy Filings Section 16 ...",
+    "keywords": [],
+    "images": [
+      "https://www.abc.xyz/assets/4d/68/600ef2c64455b2f1aafdd81b1732/ir-logo-2x.png=n-w400-h94",
+      "https://www.abc.xyz/assets/7e/d2/643df645472b886c8534622d6951/logo.png=n-w400-h97",
+      "https://www.abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s180"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://www.marketwatch.com/investing/stock/googl",
+    "title": "Alphabet Inc. Cl A Stock Quote (U.S.: Nasdaq)",
+    "source": "marketwatch.com",
+    "publish_date": null,
+    "authors": [
+      "Tomi Kilgore"
+    ],
+    "content_snippet": "Alphabet Inc. Cl A\n\nAlphabet, Inc. is a holding company, which engages in software, health care, transportation, and other technologies. It operates through the following segments: Google Services, Go...",
+    "keywords": [],
+    "images": [
+      "https://s.wsj.net/public/resources/MWimages/MW-EG169_articl_NS_20160223171404.png"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://blog.google/inside-google/company-announcements/google-agreement-acquire-wiz/",
+    "title": "Google announces agreement to acquire Wiz",
+    "source": "blog.google",
+    "publish_date": "2025-03-18 00:00:00",
+    "authors": [
+      "Keyword Team",
+      "Matt Renner",
+      "Chris Talbott",
+      "Sundar Pichai",
+      "Pushmeet Kohli",
+      "Partha Ranganathan",
+      "Amin Vahdat",
+      "Matt A.V. Chaban"
+    ],
+    "content_snippet": "Today we announced an agreement to acquire Wiz. Read our press release below, and learn more about what this means for Cloud customers and partners on the Cloud blog.\n\nMOUNTAIN VIEW, Calif. and NEW YO...",
+    "keywords": [],
+    "images": [
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/TPUv7_Hero-Image_2096x1182.max-1200x416.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Scientific_Discovery.max-1200x416.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Leaders_on_Future_of_AI.max-1200x416.format-webp.webp"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://www.forbes.com/sites/greatspeculations/2025/03/24/could-google-stock-triple/",
+    "title": "Google Stock To $500?",
+    "source": "forbes.com",
+    "publish_date": "2025-03-24 00:00:00",
+    "authors": [
+      "Trefis Team"
+    ],
+    "content_snippet": "GOOG Stock Trefis\n\nTrefis\n\nWe believe Alphabet could be poised to more than triple its valuation from an already impressive $2 trillion, potentially becoming the world\u2019s most valuable company by a sig...",
+    "keywords": [],
+    "images": [
+      "https://blogs-images.forbes.com/assets/images/avatars/blog-25_136_967b934396178738248519fd6ae13e43.jpg",
+      "https://imageio.forbes.com/specials-images/imageserve/67e12e3655dd848dc5225f98/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://seekingalpha.com/symbol/GOOGL",
+    "title": "Alphabet Inc. (GOOGL) Stock Price, Quote, News & Analysis",
+    "source": "seekingalpha.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Alphabet Inc. offers various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Clou...",
+    "keywords": [],
+    "images": [
+      "https://static.seekingalpha.com/images/users_profile/047/657/052/big_pic.png?io=w36",
+      "https://seekingalpha.com/samw/static/images/favicon.svg",
+      "https://static1.seekingalpha.com/images/users_profile/059/218/977/big_pic.png?io=w36"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://www.nasdaq.com/articles/alphabet-googl-stock-moves-14-what-you-should-know",
+    "title": "Alphabet (GOOGL) Stock Moves -1.4%: What You Should Know",
+    "source": "nasdaq.com",
+    "publish_date": null,
+    "authors": [
+      "April",
+      "Pm Edt",
+      "Zacks Equity Research"
+    ],
+    "content_snippet": "Alphabet (GOOGL) closed at $144.70 in the latest trading session, marking a -1.4% move from the prior day. The stock exceeded the S&P 500, which registered a loss of 1.57% for the day. Meanwhile, the ...",
+    "keywords": [],
+    "images": [
+      "https://www.nasdaq.com/sites/acquia.prod/files/2022/09/22/Zacks.png",
+      "https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg",
+      "https://www.nasdaq.com/themes/nsdq/dist/assets/images/circle-info.svg"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://news.google.com/home?hl=en-IN&gl=IN&ceid=IN%3Aen",
+    "title": "Google News",
+    "source": "news.google.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Picks for you\n\nSign in\n\nSign in for personalised stories in your briefing and news feed",
+    "keywords": [],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.moneycontrol.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+      "https://news.google.com/api/attachments/CC8iK0NnNDFTbWxTUTJodE1EaGZkV1V6VFJDZkF4ampCU2dLTWdZQmNKREZKZ2c=-w100-h100-p-df",
+      "https://news.google.com/api/attachments/CC8iMkNnNWthaTFKYld4WGJFNWhWMlp3VFJDZkF4ampCU2dLTWdzVkE1Q3FtZVdTUVR1WFl3=-w280-h168-p-df"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://www.theglobeandmail.com/investing/markets/stocks/GOOGL-Q/",
+    "title": "Alphabet Cl A (GOOGL-Q) Stock Price and News",
+    "source": "theglobeandmail.com",
+    "publish_date": null,
+    "authors": [
+      "Tim Shufelt"
+    ],
+    "content_snippet": "Alphabet has evolved from primarily being a search-engine provider to cloud computing, ad-based video and music streaming, autonomous vehicles, healthcare providers and others. In the online search ar...",
+    "keywords": [],
+    "images": [
+      "https://www.theglobeandmail.com/resizer/v2/https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F814146%2Fai-computer-chip.jpg?auth=fe518cc24d6eb844d3d3299d2e65dd0fb3689d2550c4577f891e415d7d4ade1a&width=300&height=200&quality=80&smart=true",
+      "https://www.theglobeandmail.com/resizer/v2/https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F814209%2Fstock-investor-looking-at-a-computer-screen-with-graphs-celebrating-success.jpg?auth=c90e26ccb53785c1568b6902b81c1c6c87ba4b5f973adbbcf359980d181dd24c&width=300&height=200&quality=80&smart=true",
+      "https://www.theglobeandmail.com/resizer/v2/https%3A%2F%2Fmedia.barchart.com%2Fcontributors-admin%2Fcommon-images%2Fimages%2FTech%2520(Ecommerce%252C%2520Social%2520Media%252C%2520etc.)%2FTesla%2520charging%2520station%2520black%2520background%2520by%2520Blomst%2520via%2520Pixabay.jpg?auth=f64ef433173e4810fca77d4d91db2ac631652dc2bd268907d9f8545fe9208cae&width=300&height=200&quality=80&smart=true"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  },
+  {
+    "url": "https://markets.businessinsider.com/news/stocks/google-backed-waymo-googl-is-quickly-gaining-market-share-in-austin-1034576083",
+    "title": "Google-Backed Waymo (GOOGL) Is Quickly Gaining Market Share in Austin",
+    "source": "markets.businessinsider.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Google-backed Waymo (GOOGL) is making a strong impression with its new robotaxi service in Austin, Texas. According to data from YipitData, the autonomous rides accounted for 20% of Uber\u2019s (UBER) tota...",
+    "keywords": [],
+    "images": [
+      "https://blog.tipranks.com/wp-content/uploads/2025/04/image-819-1024x766.png?utm_source=markets.businessinsider.com&utm_medium=referral",
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E",
+      "https://markets.businessinsider.com/public/assets/INSIDER/US/logos/Insider-logo-dark-opt.svg"
+    ],
+    "ticker": "GOOGL",
+    "extracted_at": "2025-04-13T14:26:21.842140"
+  }
+]

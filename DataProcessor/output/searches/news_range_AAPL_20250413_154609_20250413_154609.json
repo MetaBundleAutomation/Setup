@@ -1,0 +1,122 @@
+[
+  {
+    "id": "mock-news-2025-03-28-0",
+    "title": "AAPL Reports Quarterly Earnings - Mar 28, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-28/0",
+    "source": "Market Watch",
+    "publish_date": "2025-03-28",
+    "date": "2025-03-28",
+    "display_date": "Mar 28, 2025",
+    "sentiment": 0.019749997888054094,
+    "summary": "This is a simulated news article for AAPL on Mar 28, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-28-1",
+    "title": "Analysts Upgrade AAPL Rating - Mar 28, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-28/1",
+    "source": "CNBC",
+    "publish_date": "2025-03-28",
+    "date": "2025-03-28",
+    "display_date": "Mar 28, 2025",
+    "sentiment": 0.4206722879032764,
+    "summary": "This is a simulated news article for AAPL on Mar 28, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-28-2",
+    "title": "Market Trends Impact AAPL - Mar 28, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-28/2",
+    "source": "Market Watch",
+    "publish_date": "2025-03-28",
+    "date": "2025-03-28",
+    "display_date": "Mar 28, 2025",
+    "sentiment": -0.23677215929033124,
+    "summary": "This is a simulated news article for AAPL on Mar 28, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-28-3",
+    "title": "New Regulations Affect AAPL - Mar 28, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-28/3",
+    "source": "Bloomberg",
+    "publish_date": "2025-03-28",
+    "date": "2025-03-28",
+    "display_date": "Mar 28, 2025",
+    "sentiment": -0.47985147853602284,
+    "summary": "This is a simulated news article for AAPL on Mar 28, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-28-4",
+    "title": "AAPL Partners with Industry Leader - Mar 28, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-28/4",
+    "source": "Wall Street Journal",
+    "publish_date": "2025-03-28",
+    "date": "2025-03-28",
+    "display_date": "Mar 28, 2025",
+    "sentiment": 0.24672628159131738,
+    "summary": "This is a simulated news article for AAPL on Mar 28, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-29-0",
+    "title": "AAPL Partners with Industry Leader - Mar 29, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-29/0",
+    "source": "Reuters",
+    "publish_date": "2025-03-29",
+    "date": "2025-03-29",
+    "display_date": "Mar 29, 2025",
+    "sentiment": -0.03581010204847668,
+    "summary": "This is a simulated news article for AAPL on Mar 29, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-29-1",
+    "title": "Analysts Upgrade AAPL Rating - Mar 29, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-29/1",
+    "source": "Financial Times",
+    "publish_date": "2025-03-29",
+    "date": "2025-03-29",
+    "display_date": "Mar 29, 2025",
+    "sentiment": 0.03545662253981252,
+    "summary": "This is a simulated news article for AAPL on Mar 29, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-29-2",
+    "title": "New Regulations Affect AAPL - Mar 29, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-29/2",
+    "source": "Wall Street Journal",
+    "publish_date": "2025-03-29",
+    "date": "2025-03-29",
+    "display_date": "Mar 29, 2025",
+    "sentiment": -0.4897960418545375,
+    "summary": "This is a simulated news article for AAPL on Mar 29, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-29-3",
+    "title": "AAPL Announces New Product Line - Mar 29, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-29/3",
+    "source": "Bloomberg",
+    "publish_date": "2025-03-29",
+    "date": "2025-03-29",
+    "display_date": "Mar 29, 2025",
+    "sentiment": 0.01678605068560024,
+    "summary": "This is a simulated news article for AAPL on Mar 29, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-03-29-4",
+    "title": "Analysts Upgrade AAPL Rating - Mar 29, 2025",
+    "link": "https://example.com/news/AAPL/2025-03-29/4",
+    "source": "Financial Times",
+    "publish_date": "2025-03-29",
+    "date": "2025-03-29",
+    "display_date": "Mar 29, 2025",
+    "sentiment": 0.18886419488779882,
+    "summary": "This is a simulated news article for AAPL on Mar 29, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  }
+]

@@ -1,0 +1,150 @@
+[
+  {
+    "url": "https://www.nvidia.com/en-us/",
+    "title": "World Leader in Artificial Intelligence Computing",
+    "source": "nvidia.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "From the cloud to the office to the data center to the edge, NVIDIA provides solutions that deliver breakthrough performance on enterprise AI and HPC workloads at any scale, driving business decisions...",
+    "keywords": [],
+    "images": [
+      "https://www.nvidia.com/content/nvidiaGDC/us/en_US/home/_jcr_content/root/responsivegrid/nv_carousel_1056837463/item_1675308118574.coreimg.jpeg/1744290677878/geforce-g-assist-ari.jpeg",
+      "https://www.nvidia.com/content/nvidiaGDC/us/en_US/home/_jcr_content/root/responsivegrid/copy_of_copy_of_nv_c/nv_teaser_copy_copy.coreimg.jpeg/1744249900391/physical-ai-robotics-sessions-gtc-sfg.jpeg",
+      "https://www.nvidia.com/content/nvidiaGDC/us/en_US/home/_jcr_content/root/responsivegrid/nv_carousel_1056837463/nv_teaser_copy_copy_.coreimg.jpeg/1744290677262/half-life-2-rtx-nv-sfg-2560x1440.jpeg"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  },
+  {
+    "url": "https://blogs.nvidia.com/",
+    "title": "NVIDIA Blog",
+    "source": "blogs.nvidia.com",
+    "publish_date": null,
+    "authors": [
+      "Geforce Now Community",
+      "Sobia Khan",
+      "Noah Kravitz",
+      "Gerardo Delgado",
+      "James Mckenna",
+      "Nvidia Writers",
+      "Jesse Clayton",
+      ".Wp-Block-Co-Authors-Plus-Coauthors.Is-Layout-Flow",
+      "Class",
+      "Wp-Block-Co-Authors-Plus"
+    ],
+    "content_snippet": "Necessity is the mother of invention. And sometimes, what a person really needs is hot chocolate served to them by a robot \u2014 one named after a pop star, ideally\u2026. Read Article",
+    "keywords": [],
+    "images": [
+      "https://blogs.nvidia.com/wp-content/uploads/2025/04/npnemea2025-960x510.jpg",
+      "https://blogs.nvidia.com/wp-content/uploads/2025/04/mlperfinference2025.jpg",
+      "https://blogs.nvidia.com/wp-content/uploads/2025/04/ai-agents-1280x680-1-960x510.jpg"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Nvidia",
+    "title": "Wikipedia",
+    "source": "en.wikipedia.org",
+    "publish_date": null,
+    "authors": [
+      "French Competition Authority Investigation"
+    ],
+    "content_snippet": "American multinational technology company\n\nNvidia Corporation[a] ( en-VID-ee-\u0259) is an American multinational corporation and technology company headquartered in Santa Clara, California, and incorporat...",
+    "keywords": [],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/2484_Berryessa_Road.jpg/220px-2484_Berryessa_Road.jpg",
+      "https://en.wikipedia.org/w/resources/assets/mediawiki_compact.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Nvidiaheadquarters.jpg/250px-Nvidiaheadquarters.jpg"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  },
+  {
+    "url": "https://www.reddit.com/r/nvidia/",
+    "title": "The heart of the internet",
+    "source": "reddit.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Build pictures related posts are only allowed on Friday, Saturday, and Sunday. You are more than welcome to come back on the weekend and post your build!\n\nPlease follow Rule #10 regarding low quality ...",
+    "keywords": [],
+    "images": [
+      "https://emoji.redditmedia.com/uggdxvkdai6e1_t5_2rlgy/nvidia",
+      "https://id.rlcdn.com/472486.gif",
+      "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  },
+  {
+    "url": "https://developer.nvidia.com/tensorrt",
+    "title": "NVIDIA Developer",
+    "source": "developer.nvidia.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "NVIDIA\u00ae TensorRT\u2122 is an ecosystem of tools for developers to achieve high-performance deep learning inference. TensorRT includes inference compilers, runtimes, and model optimizations that deliver low...",
+    "keywords": [],
+    "images": [
+      "https://d29g4g2dyqv443.cloudfront.net/sites/default/files/akamai/tensorrt-getting-started-og-1200x630.jpg",
+      "https://developer.download.nvidia.com/images/cost-of-ownership-630x354-1.jpg",
+      "https://developer.download.nvidia.com/icons/m48-download.svg"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  },
+  {
+    "url": "https://nvidianews.nvidia.com/news",
+    "title": "News Archive",
+    "source": "nvidianews.nvidia.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Get ready to explore the Deep South. South of Midnight, the action-adventure game from Compulsion Games, launches today on GeForce NOW. Following last week\u2019s launch of Advanced Access in the cloud, Ge...",
+    "keywords": [],
+    "images": [
+      "https://s3.amazonaws.com/cms.ipressroom.com/219/files/202504/67f796e33d63325ad3cde7db_npnemea2025-842x450/npnemea2025-842x450_mid.jpg",
+      "https://s3.amazonaws.com/cms.ipressroom.com/219/files/201805/5af08ad0ed6ae554db8666ce_ai-podcast-842x450/ai-podcast-842x450_mid.jpg",
+      "https://s3.amazonaws.com/cms.ipressroom.com/219/files/202504/67eea2ac3d6332bf1d611a3e_nab25_blog_header_1280x680-842x450/nab25_blog_header_1280x680-842x450_mid.jpg"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  },
+  {
+    "url": "https://www.reddit.com/r/nvidia/comments/1jwd473/fedex_stole_my_4090_fe_rma_inbound_to_nvidia_im/",
+    "title": "The heart of the internet",
+    "source": "reddit.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "I am making this post to share my nightmare I'm dealing with to this subreddit and the world, and to just vent my frustration right now.\n\nIn October 2022, I bought the 4090 FE from Best Buy and used i...",
+    "keywords": [],
+    "images": [
+      "https://emoji.redditmedia.com/uggdxvkdai6e1_t5_2rlgy/nvidia",
+      "https://id.rlcdn.com/472486.gif",
+      "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  },
+  {
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-dgx-spark-and-dgx-station-personal-ai-computers",
+    "title": "NVIDIA Announces DGX Spark and DGX Station Personal AI Computers",
+    "source": "nvidianews.nvidia.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "Powered by NVIDIA Grace Blackwell, Desktop Supercomputers Place Accelerated AI in the Hands of Developers, Researchers and Data Scientists; Systems Coming From Leading Computer Makers Including ASUS, ...",
+    "keywords": [],
+    "images": [
+      "https://s3.amazonaws.com/cms.ipressroom.com/219/files/20252/67d925863d6332a745ff3d64_nvidia-dgx-spark-and-nvidia-dgx-station/nvidia-dgx-spark-and-nvidia-dgx-station_mid.jpg",
+      "https://s3.amazonaws.com/cms.ipressroom.com/219/files/20252/67d925863d6332a745ff3d64_nvidia-dgx-spark-and-nvidia-dgx-station/nvidia-dgx-spark-and-nvidia-dgx-station_8052c297-4950-4efa-83e1-ce31a835f783-prv.jpg",
+      "https://s3.amazonaws.com/cms.ipressroom.com/219/files/20252/202503180805/67d9293c3d6332a747ff3d70_quantum-computing/quantum-computing_mid.jpg"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  },
+  {
+    "url": "https://docs.nvidia.com/cuda/cuda-installation-guide-linux/",
+    "title": "1. Introduction \u2014 Installation Guide for Linux 12.8 documentation",
+    "source": "docs.nvidia.com",
+    "publish_date": null,
+    "authors": [],
+    "content_snippet": "This document is provided for information purposes only and shall not be regarded as a warranty of a certain functionality, condition, or quality of a product. NVIDIA Corporation (\u201cNVIDIA\u201d) makes no r...",
+    "keywords": [],
+    "images": [
+      "https://docs.nvidia.com/cuda/_static/Logo_and_CUDA.png",
+      "https://docs.nvidia.com/cuda/cuda-installation-guide-linux/_images/valid-results-from-sample-cuda-bandwidthtest-program.png",
+      "https://docs.nvidia.com/cuda/_static/NVIDIA-LogoWhite.svg"
+    ],
+    "extracted_at": "2025-04-13T14:55:07.573584"
+  }
+]

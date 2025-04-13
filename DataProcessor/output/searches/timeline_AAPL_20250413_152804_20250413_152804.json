@@ -1,0 +1,219 @@
+[
+  {
+    "date": "2025-03-14",
+    "price": 98.36,
+    "volume": 519106,
+    "sentiment": -0.45,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-15",
+    "price": 96.88,
+    "volume": 1286692,
+    "sentiment": -0.54,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-16",
+    "price": 96.11,
+    "volume": 1262039,
+    "sentiment": -0.28,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-17",
+    "price": 98.21,
+    "volume": 720598,
+    "sentiment": 0.37,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-18",
+    "price": 100.4,
+    "volume": 1261097,
+    "sentiment": 0.59,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-19",
+    "price": 99.65,
+    "volume": 586337,
+    "sentiment": -0.05,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-20",
+    "price": 100.15,
+    "volume": 1234690,
+    "sentiment": 0.11,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-21",
+    "price": 102.21,
+    "volume": 983306,
+    "sentiment": 0.5,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-22",
+    "price": 102.67,
+    "volume": 962040,
+    "sentiment": -0.07,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-23",
+    "price": 104.15,
+    "volume": 1377136,
+    "sentiment": 0.29,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-24",
+    "price": 104.78,
+    "volume": 1437102,
+    "sentiment": 0.2,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-25",
+    "price": 104.88,
+    "volume": 1276924,
+    "sentiment": 0.13,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-26",
+    "price": 103.33,
+    "volume": 1175859,
+    "sentiment": -0.32,
+    "newsCount": 1
+  },
+  {
+    "date": "2025-03-27",
+    "price": 105.05,
+    "volume": 1196047,
+    "sentiment": 0.41,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-28",
+    "price": 106.31,
+    "volume": 1364445,
+    "sentiment": 0.24,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-29",
+    "price": 105.42,
+    "volume": 1011882,
+    "sentiment": -0.26,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-30",
+    "price": 104.42,
+    "volume": 1454050,
+    "sentiment": -0.06,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-03-31",
+    "price": 104.48,
+    "volume": 1384146,
+    "sentiment": -0.11,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-01",
+    "price": 104.54,
+    "volume": 889157,
+    "sentiment": -0.18,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-02",
+    "price": 105.16,
+    "volume": 995498,
+    "sentiment": 0.08,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-03",
+    "price": 106.9,
+    "volume": 1325084,
+    "sentiment": 0.52,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-04",
+    "price": 105.44,
+    "volume": 627218,
+    "sentiment": -0.26,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-05",
+    "price": 106.6,
+    "volume": 908723,
+    "sentiment": 0.42,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-06",
+    "price": 107.0,
+    "volume": 1099381,
+    "sentiment": 0.24,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-07",
+    "price": 107.41,
+    "volume": 846281,
+    "sentiment": -0.08,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-08",
+    "price": 105.84,
+    "volume": 738987,
+    "sentiment": -0.29,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-09",
+    "price": 104.75,
+    "volume": 1177900,
+    "sentiment": -0.41,
+    "newsCount": 19
+  },
+  {
+    "date": "2025-04-10",
+    "price": 104.91,
+    "volume": 1072203,
+    "sentiment": -0.15,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-11",
+    "price": 106.68,
+    "volume": 1024184,
+    "sentiment": 0.49,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-12",
+    "price": 107.17,
+    "volume": 716656,
+    "sentiment": 0.29,
+    "newsCount": 0
+  },
+  {
+    "date": "2025-04-13",
+    "price": 108.25,
+    "volume": 902065,
+    "sentiment": 0.19,
+    "newsCount": 0
+  }
+]

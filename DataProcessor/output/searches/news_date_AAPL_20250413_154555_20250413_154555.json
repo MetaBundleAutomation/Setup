@@ -1,0 +1,62 @@
+[
+  {
+    "id": "mock-news-2025-04-01-0",
+    "title": "AAPL Partners with Industry Leader - Apr 01, 2025",
+    "link": "https://example.com/news/AAPL/2025-04-01/0",
+    "source": "Bloomberg",
+    "publish_date": "2025-04-01",
+    "date": "2025-04-01",
+    "display_date": "Apr 01, 2025",
+    "sentiment": -0.4089015248098874,
+    "summary": "This is a simulated news article for AAPL on Apr 01, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-04-01-1",
+    "title": "Market Trends Impact AAPL - Apr 01, 2025",
+    "link": "https://example.com/news/AAPL/2025-04-01/1",
+    "source": "Wall Street Journal",
+    "publish_date": "2025-04-01",
+    "date": "2025-04-01",
+    "display_date": "Apr 01, 2025",
+    "sentiment": -0.15794021550318782,
+    "summary": "This is a simulated news article for AAPL on Apr 01, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-04-01-2",
+    "title": "Investors React to AAPL News - Apr 01, 2025",
+    "link": "https://example.com/news/AAPL/2025-04-01/2",
+    "source": "Wall Street Journal",
+    "publish_date": "2025-04-01",
+    "date": "2025-04-01",
+    "display_date": "Apr 01, 2025",
+    "sentiment": 0.4055903397434326,
+    "summary": "This is a simulated news article for AAPL on Apr 01, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-04-01-3",
+    "title": "AAPL Stock Movement Analysis - Apr 01, 2025",
+    "link": "https://example.com/news/AAPL/2025-04-01/3",
+    "source": "Financial Times",
+    "publish_date": "2025-04-01",
+    "date": "2025-04-01",
+    "display_date": "Apr 01, 2025",
+    "sentiment": -0.07011233124882676,
+    "summary": "This is a simulated news article for AAPL on Apr 01, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  },
+  {
+    "id": "mock-news-2025-04-01-4",
+    "title": "AAPL Reports Quarterly Earnings - Apr 01, 2025",
+    "link": "https://example.com/news/AAPL/2025-04-01/4",
+    "source": "Wall Street Journal",
+    "publish_date": "2025-04-01",
+    "date": "2025-04-01",
+    "display_date": "Apr 01, 2025",
+    "sentiment": -0.07495690352403916,
+    "summary": "This is a simulated news article for AAPL on Apr 01, 2025. Click to visit the Bloomberg Terminal documentation.",
+    "is_mock": true
+  }
+]
